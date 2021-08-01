@@ -1,0 +1,7 @@
+# This file is used internally by FFMPEG.
+file 'file:/Users/bryanbain/Desktop/Manim_Projects/media/videos/simplifyRationals/480p15/partial_movie_files/SimplifyRationals1/3163782288_701350180_3265188039.mp4'
+file 'file:/Users/bryanbain/Desktop/Manim_Projects/media/videos/simplifyRationals/480p15/partial_movie_files/SimplifyRationals1/607903841_417047555_2307898546.mp4'
+file 'file:/Users/bryanbain/Desktop/Manim_Projects/media/videos/simplifyRationals/480p15/partial_movie_files/SimplifyRationals1/607903841_701350180_2796086534.mp4'
+file 'file:/Users/bryanbain/Desktop/Manim_Projects/media/videos/simplifyRationals/480p15/partial_movie_files/SimplifyRationals1/607903841_2276353480_4121065415.mp4'
+file 'file:/Users/bryanbain/Desktop/Manim_Projects/media/videos/simplifyRationals/480p15/partial_movie_files/SimplifyRationals1/607903841_701350180_3836648447.mp4'
+file 'file:/Users/bryanbain/Desktop/Manim_Projects/media/videos/simplifyRationals/480p15/partial_movie_files/SimplifyRationals1/607903841_2415674727_3974028738.mp4'
