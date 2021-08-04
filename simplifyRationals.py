@@ -3,7 +3,7 @@ import numpy as np
 
 class SimplifyRationals(Scene):
 	def construct(self):
-		section_name = Text("Simplifying Rational Expressions").scale(1.5)
+		section_name = Title("Simplifying Rational Expressions").scale(1.5)
 		step1 = Text("1. Factor the numerator and denominator completely.", 
 			t2c={' Facto':RED}
 			)
@@ -24,5 +24,18 @@ class SimplifyRationals(Scene):
 
 		ex1 = MathTex("\\frac{x^2+4x+3}{x+1}").scale(2)
 		self.play(FadeIn(ex1),run_time = 2)
+		self.wait()
 		ex1_1 = MathTex("\\frac{(x+1)(x+3)}{x+1}").scale(2)
-		self.play(Transform(ex1, ex1_1))
+		self.play(ReplacementTransform(ex1, ex1_1))
+		self.wait()
+		ex1_1a = MathTex("\\frac{(x+1)(x+3)}{x+1}").scale(2)
+		self.play(FadeToColor(ex1_1a[0][1:4], YELLOW))
+		self.play(FadeToColor(ex1_1a[0][11:14], YELLOW))
+		self.play(ReplacementTransform(ex1_1, ex1_1a))
+		ex1_2 = MathTex("\\frac{1(x+3)}{1}").scale(2)
+		self.play(ReplacementTransform(ex1_1a, ex1_2))
+		self.play(FadeToColor(ex1_2[0][0], YELLOW))
+		self.play(FadeToColor(ex1_2[0][-1], YELLOW))
+		self.wait()
+		ex1_3 = MathTex("(x+3)").scale(2)
+		self.play(ReplacementTransform(ex1_2, ex1_3))
