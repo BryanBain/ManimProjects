@@ -63,8 +63,6 @@ class SimplifyRationals(Scene):
 		den_common_factor_2_2 = ex2_2[0][-1]
 		common_factors_2_2 = VGroup(num_common_factor_2_2, den_common_factor_2_2)
 		self.play(FadeToColor(common_factors_2_2, YELLOW, run_time=0.01))
-		# self.play(FadeToColor(ex2_2[0][0], YELLOW, run_time=0.01))
-		# self.play(FadeToColor(ex2_2[0][-1], YELLOW, run_time=0.01))
 		self.wait()
 		ex2_3 = MathTex("x+5").scale(2)
 		self.play(ReplacementTransform(ex2_2, ex2_3))
@@ -84,14 +82,34 @@ class SimplifyRationals(Scene):
 		ex3_2 = MathTex("\\frac{(x-9)1}{(2x-1)1}").scale(2)
 		self.play(ReplacementTransform(ex3_1, ex3_2))
 		self.wait()
-
 		num_common_factor_3_2 = ex3_2[0][5]
 		den_common_factor_3_2 = ex3_2[0][-1]
 		common_factors_3_2 = VGroup(num_common_factor_3_2, den_common_factor_3_2)
 		self.play(FadeToColor(common_factors_3_2, YELLOW, run_time=0.01))
-		# self.play(FadeToColor(ex2_2[0][0], YELLOW, run_time=0.01))
-		# self.play(FadeToColor(ex2_2[0][-1], YELLOW, run_time=0.01))
 		self.wait()
 		ex3_3 = MathTex("\\frac{x-9}{2x-1}").scale(2)
 		self.play(ReplacementTransform(ex3_2, ex3_3))
 		self.play(FadeOut(ex3_3))
+
+		ex4 = MathTex("\\frac{x^2-2x-15}{3x^2+8x-3}").scale(2)
+		self.play(FadeIn(ex4), run_time=2)
+		self.wait()
+		ex4_1 = MathTex("\\frac{(x+3)(x-5)}{(x+3)(3x-1)}").scale(2)
+		self.play(ReplacementTransform(ex4, ex4_1))
+		self.wait()
+		num_common_factor_4_1 = ex4_1[0][1:4]
+		den_common_factor_4_1 = ex4_1[0][12:15]
+		common_factors_4_1 = VGroup(num_common_factor_4_1, den_common_factor_4_1)
+		self.play(FadeToColor(common_factors_4_1, YELLOW, run_time=0.01))
+		self.wait()
+		ex4_2 = MathTex("\\frac{1(x-5)}{1(3x-1)}").scale(2)
+		self.play(ReplacementTransform(ex4_1, ex4_2))
+		self.wait()
+		num_common_factor_4_2 = ex4_2[0][0]
+		den_common_factor_4_2 = ex4_2[0][7]
+		common_factors_4_2 = VGroup(num_common_factor_4_2, den_common_factor_4_2)
+		self.play(FadeToColor(common_factors_4_2, YELLOW, run_time=0.01))
+		self.wait()
+		ex4_3 = MathTex("\\frac{x-5}{3x-1}").scale(2)
+		self.play(ReplacementTransform(ex4_2, ex4_3))
+		self.play(FadeOut(ex4_3))
