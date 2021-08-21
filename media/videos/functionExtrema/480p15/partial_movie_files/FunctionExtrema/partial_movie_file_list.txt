@@ -1,3 +1,4 @@
 # This file is used internally by FFMPEG.
-file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/functionExtrema/480p15/partial_movie_files/FunctionExtrema/3163782288_2590095775_2879756158.mp4'
-file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/functionExtrema/480p15/partial_movie_files/FunctionExtrema/2201830969_3263697427_2397604919.mp4'
+file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/FunctionExtrema/480p15/partial_movie_files/FunctionExtrema/3163782288_2590095775_2879756158.mp4'
+file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/FunctionExtrema/480p15/partial_movie_files/FunctionExtrema/2201830969_3263697427_2397604919.mp4'
+file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/FunctionExtrema/480p15/partial_movie_files/FunctionExtrema/2201830969_3263697427_1219229148.mp4'
