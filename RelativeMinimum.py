@@ -30,10 +30,6 @@ class RelativeMinimum(Scene):
 		text.next_to([ax.coords_to_point(0.721,-2.268)], DOWN)
 		text1.next_to(text, DOWN)
 
-		# y_value = DecimalNumber(0, num_decimal_places=4, color=YELLOW)
-		# y_value.add_updater(lambda d: d.next_to(dot, UP))
-		# y_value.add_updater(lambda d: d.set_value(func(t.get_value())))
-
 		self.add(ax, graph, dot)
 		self.play(t.animate.set_value(x_space[max_index]), run_time=3)
 		self.add(text)

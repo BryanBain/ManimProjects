@@ -1,0 +1,7 @@
+# This file is used internally by FFMPEG.
+file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/averageRateChange/480p15/partial_movie_files/AverageRateOfChange/3163782288_3263697427_598608005.mp4'
+file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/averageRateChange/480p15/partial_movie_files/AverageRateOfChange/2201830969_4059171932_1960424797.mp4'
+file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/averageRateChange/480p15/partial_movie_files/AverageRateOfChange/2201830969_3263697427_3408469317.mp4'
+file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/averageRateChange/480p15/partial_movie_files/AverageRateOfChange/2201830969_1922675964_3290395917.mp4'
+file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/averageRateChange/480p15/partial_movie_files/AverageRateOfChange/2201830969_3263697427_953282790.mp4'
+file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/averageRateChange/480p15/partial_movie_files/AverageRateOfChange/2201830969_3408967028_934180994.mp4'
