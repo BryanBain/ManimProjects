@@ -66,3 +66,16 @@ class AverageRateOfChange(Scene):
         self.play(Write(coords_2))
         self.wait()
         self.play(Write(segment))
+        self.play(FadeOut(VGroup(axes, graph, dot1, coords_1, dot2, coords_2, segment)))
+
+        work = MathTex(r"\frac{3-1.5}{3-0}").scale(1.25)
+        work1 = MathTex(r"\frac{1.5}{3}").scale(1.25)
+        work2 = MathTex(r"\frac{1}{2}").scale(1.25)
+
+        self.play(Write(work))
+        self.wait()
+        self.play(ReplacementTransform(work, work1))
+        self.wait()
+        self.play(ReplacementTransform(work1, work2))
+        self.wait()
+        self.add(Rectangle(width=1, height=2))
