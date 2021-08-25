@@ -24,6 +24,13 @@ class AverageRateOfChange(Scene):
         self.wait(2)
         self.remove(group)
 
+        work1 = MathTex(r"f(0) = 1.5").scale(1.5)
+        work2 = MathTex(r"f(3) = 3").scale(1.5)
+        work_group = VGroup(work1, work2).arrange(DOWN)
+        self.play(Write(work_group))
+        self.wait(2)
+        self.remove(work_group)
+
         axes = Axes(
                 x_range = [-2,4,1],
                 y_range = [0,4,1],
@@ -41,15 +48,21 @@ class AverageRateOfChange(Scene):
         
         point1 = [axes.coords_to_point(x1, y1)]
         dot1 = Dot(point1, radius = 0.2, color=ORANGE)
+        coords_1 = MathTex(r"(0, 1.5)", color=ORANGE).next_to(dot1, LEFT).scale(1.25)
         point2 = [axes.coords_to_point(x2, y2)]
         dot2 = Dot(point2, radius = 0.2, color=ORANGE)
+        coords_2 = MathTex(r"(3, 3)", color=ORANGE).next_to(dot2, RIGHT).scale(1.25)
 
         segment = Line(point1, point2, color=ORANGE)
 
-        self.add(graph)
+        self.add(axes, graph)
         self.wait()
         self.play(Write(dot1))
         self.wait()
+        self.play(Write(coords_1))
+        self.wait()
         self.play(Write(dot2))
+        self.wait()
+        self.play(Write(coords_2))
         self.wait()
         self.play(Write(segment))
