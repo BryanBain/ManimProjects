@@ -78,4 +78,4 @@ class AverageRateOfChange(Scene):
         self.wait()
         self.play(ReplacementTransform(work1, work2))
         self.wait()
-        self.add(Rectangle(width=1, height=2))
+        self.play(Indicate(work2))

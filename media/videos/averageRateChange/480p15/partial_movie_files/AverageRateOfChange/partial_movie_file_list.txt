@@ -22,3 +22,4 @@ file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/av
 file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/averageRateChange/480p15/partial_movie_files/AverageRateOfChange/2201830969_3263697427_2032475118.mp4'
 file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/averageRateChange/480p15/partial_movie_files/AverageRateOfChange/2201830969_2715116241_1267653416.mp4'
 file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/averageRateChange/480p15/partial_movie_files/AverageRateOfChange/2201830969_3263697427_1166391736.mp4'
+file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/averageRateChange/480p15/partial_movie_files/AverageRateOfChange/2201830969_625070343_3278703230.mp4'
