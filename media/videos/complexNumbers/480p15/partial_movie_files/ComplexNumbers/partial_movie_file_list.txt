@@ -1,0 +1,13 @@
+# This file is used internally by FFMPEG.
+file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/complexNumbers/480p15/partial_movie_files/ComplexNumbers/3163782288_1410262128_2352891379.mp4'
+file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/complexNumbers/480p15/partial_movie_files/ComplexNumbers/2201830969_870147415_1076944728.mp4'
+file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/complexNumbers/480p15/partial_movie_files/ComplexNumbers/2201830969_3669424095_3287307828.mp4'
+file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/complexNumbers/480p15/partial_movie_files/ComplexNumbers/2201830969_1774750380_1245145485.mp4'
+file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/complexNumbers/480p15/partial_movie_files/ComplexNumbers/2201830969_1063768452_3332948811.mp4'
+file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/complexNumbers/480p15/partial_movie_files/ComplexNumbers/2201830969_1807679618_2040499121.mp4'
+file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/complexNumbers/480p15/partial_movie_files/ComplexNumbers/2201830969_3493041802_350880471.mp4'
+file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/complexNumbers/480p15/partial_movie_files/ComplexNumbers/2201830969_1702739236_2680265507.mp4'
+file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/complexNumbers/480p15/partial_movie_files/ComplexNumbers/2201830969_3089665842_1681908958.mp4'
+file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/complexNumbers/480p15/partial_movie_files/ComplexNumbers/2201830969_2950214993_3595314986.mp4'
+file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/complexNumbers/480p15/partial_movie_files/ComplexNumbers/2201830969_544714367_3730928432.mp4'
+file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/complexNumbers/480p15/partial_movie_files/ComplexNumbers/2201830969_3493041802_1353578627.mp4'

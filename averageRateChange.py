@@ -24,12 +24,26 @@ class AverageRateOfChange(Scene):
         self.wait(2)
         self.remove(group)
 
+        work_intro = Tex(r"First, evaluate the function at $x=0$ and $x=3$")
+
         work1 = MathTex(r"f(0) = 1.5").scale(1.5)
         work2 = MathTex(r"f(3) = 3").scale(1.5)
+
+        self.play(Write(work_intro))
+        self.wait()
+        self.play(work_intro.animate.shift(UP*3))
+        self.wait()
+        self.play(Write(text_function))
+        self.play(text_function.animate.shift(UP*2.5))
         work_group = VGroup(work1, work2).arrange(DOWN)
         self.play(Write(work_group))
+        self.wait(3)
+        self.remove(work_intro, work_group, text_function)
+
+        second_text = Tex(r"Now, find the slope of the line connecting (0, 1.5) and (3, 3)")
+        self.play(Write(second_text))
         self.wait(2)
-        self.remove(work_group)
+        self.remove(second_text)
 
         axes = Axes(
                 x_range = [-2,4,1],
