@@ -15,3 +15,4 @@ file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/In
 file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/IntroFunctions/480p15/partial_movie_files/IntroFunctions/2201830969_3155925165_1071366408.mp4'
 file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/IntroFunctions/480p15/partial_movie_files/IntroFunctions/2201830969_1955626869_437765099.mp4'
 file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/IntroFunctions/480p15/partial_movie_files/IntroFunctions/2201830969_115861372_4164835193.mp4'
+file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/IntroFunctions/480p15/partial_movie_files/IntroFunctions/2201830969_398514950_4101073582.mp4'

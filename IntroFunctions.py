@@ -85,5 +85,26 @@ class IntroFunctions(Scene):
 
 		line1b = Line(ex1b_axes.c2p(5,0,0), ex1b_axes.c2p(5,5,0))
 		self.play(Create(line1b))
-		self.play(Create(SurroundingRectangle(VGroup(dot1b, dot2b))))
-		self.remove(ex1b_axes, line1b, dot_ex1b)
+		rectangle = SurroundingRectangle(VGroup(dot1b, dot2b))
+		self.play(Create(rectangle))
+		self.remove(ex1b_axes, line1b, dot_ex1b, rectangle)
+		self.wait()
+
+class FunctionMachine(Scene):
+	def construct(self):
+		intro_text = Text("Functions are nothing more than machines\n"
+			"that accept an input and produce an output.")
+		self.play(Write(intro_text))
+		self.remove(intro_text)
+
+		input_arrow = Arrow(start=LEFT*5, end=LEFT*2, color=YELLOW)
+		input_value = Tex("49").next_to(input_arrow, LEFT, buff=0.5).scale(2)
+		function_box = Tex(r"$f(x) = \sqrt{x}$")
+		box = SurroundingRectangle(function_box, color=RED, buff=0.25)
+		machine = VGroup(function_box, box).scale(1.5).next_to(input_arrow, RIGHT)
+		# machine = VGroup(function_box, box)
+		self.play(Write(input_value))
+		self.play(Create(input_arrow))
+		# self.play(Write(function_box))
+		# self.play(Create(box))
+		self.play(Write(machine))
