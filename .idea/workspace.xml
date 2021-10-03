@@ -1,108 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6cdfaf1c-b2c6-4713-b1fe-06dc714e58cb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/logsexp.py" beforeDir="false" afterPath="$PROJECT_DIR$/logsexp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/LogsExps.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/media/videos/logsexp/480p15/LogsExps.mp4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_102567625_534630194.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_1069646389_2350987162.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_1069646389_3306840967.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_1069646389_3344681056.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_1069646389_826031878.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_1149892068_2500457909.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_1149892068_2724883626.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_1149892068_328324131.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_1159156270_1829081263.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_1159156270_789262116.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_1273697491_1213873096.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_1273697491_3492071889.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_1273697491_414873993.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_1326580994_2451307652.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_1365874033_2144935784.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_1415220257_534630194.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_1431592018_1934965062.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_1492074578_2451307652.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_1672265876_534630194.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_1676109506_2109782331.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_1703421611_2451307652.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_1937729506_534630194.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_2124741899_534630194.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_2304789292_925600008.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_2543109503_2014539583.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_2543109503_3090807822.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_2543109503_3434357297.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_2574915143_1231016819.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_2574915143_3571360808.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_2574915143_775687117.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_2607024719_2144935784.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_2642676479_3079688398.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_2798562915_1864347192.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_2798562915_1920658316.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_2798562915_353827547.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_2798562915_445307277.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_2930974067_3403063608.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_2953920556_2451307652.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_2957636406_3133037280.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_3047436217_2850142766.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_3239400035_3060681427.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_328765401_2071527639.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_328765401_4224817023.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_328765401_554725071.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_328765401_925943166.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_3493041802_1008622800.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_3493041802_1166540362.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_3493041802_1222083377.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_3493041802_1261303989.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_3493041802_1282939542.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_3493041802_1414276173.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_3493041802_1789671428.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_3493041802_1963895962.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_3493041802_212178079.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_3493041802_2211267865.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_3493041802_2225374946.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_3493041802_2557712748.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_3493041802_2788926762.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_3493041802_2917847319.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_3493041802_3169515490.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_3493041802_3251238067.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_3493041802_3307091688.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_3493041802_3363789350.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_3493041802_3521631504.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_3493041802_3529050033.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_3493041802_3667058490.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_3493041802_4069767951.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_3493041802_4175586441.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_3493041802_4255878586.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_3493041802_4268398764.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_3493041802_505940259.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_3493041802_672242889.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_3493041802_750466970.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_3493041802_938071521.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_3517832589_2144935784.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_3623450519_2109782331.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_3734015102_2109782331.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_37815415_3403063608.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_420568401_789262116.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_4229855209_282926698.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_4229855209_583366066.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_4229855209_92940195.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_4239948339_160911963.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_4239948339_2858932741.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_4239948339_3760277524.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_4294297522_1934965062.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_550387732_1990129979.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_550387732_3133037280.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_550387732_3374461101.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_550387732_4199615200.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_790774303_3403063608.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_818607567_3018645070.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_818607567_3485442269.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_818607567_3642796035.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_846086708_2034978555.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_846086708_2428430086.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/2201830969_846086708_3429468772.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/partial_movie_file_list.txt" beforeDir="false" afterPath="$PROJECT_DIR$/media/videos/logsexp/480p15/partial_movie_files/LogsExps/partial_movie_file_list.txt" afterDir="false" />
-    </list>
+    <list default="true" id="6cdfaf1c-b2c6-4713-b1fe-06dc714e58cb" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,21 +12,23 @@
     <session id="223753123">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="5" />
           <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="2" />
+          <entry key="py" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="1" />
+          <entry key="Python" value="2" />
           <entry key="Scratch" value="1" />
         </counts>
       </usages-collector>
@@ -140,15 +41,20 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/simplifyRationals.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1206">
+            <state>
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/complexNumbers.py">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -188,7 +94,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python" />
-    <property name="settings.editor.selected.configurable" value="diff.base" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -246,12 +152,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/simplifyRationals.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1206">
+        <state>
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/complexNumbers.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>

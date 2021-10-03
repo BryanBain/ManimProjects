@@ -19,7 +19,7 @@ file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/av
 file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/averageRateChange/480p15/partial_movie_files/AverageRateOfChange/2201830969_466934261_2907513021.mp4'
 file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/averageRateChange/480p15/partial_movie_files/AverageRateOfChange/2201830969_3493041802_3072618035.mp4'
 file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/averageRateChange/480p15/partial_movie_files/AverageRateOfChange/2201830969_1984025620_1041005894.mp4'
-file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/averageRateChange/480p15/partial_movie_files/AverageRateOfChange/2201830969_3493041802_2434077701.mp4'
+file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/averageRateChange/480p15/partial_movie_files/AverageRateOfChange/2201830969_3493041802_1918421736.mp4'
 file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/averageRateChange/480p15/partial_movie_files/AverageRateOfChange/2201830969_795772384_40945052.mp4'
 file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/averageRateChange/480p15/partial_movie_files/AverageRateOfChange/2201830969_3493041802_3559170676.mp4'
 file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/averageRateChange/480p15/partial_movie_files/AverageRateOfChange/2201830969_2145645386_3418838245.mp4'
