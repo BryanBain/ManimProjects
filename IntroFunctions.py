@@ -115,3 +115,61 @@ class FunctionMachine(Scene):
 		self.play(Create(output_arrow))
 		output_value = Tex("7").next_to(output_arrow, RIGHT, buff=0.5).scale(2)
 		self.play(Write(output_value))
+		self.remove(output_value, output_arrow, func_eval, box)
+
+		ex3a1 = MathTex(r"f(x) &= 2x + 3", substrings_to_isolate="x").set_color_by_tex("x", '#00FFEE')
+		self.play(Write(ex3a1))
+
+		ex3a1_1 = MathTex(r"f(2) &= 2(2) + 3\\ &= 4 + 3 \\ &= 7").next_to(ex3a1, DOWN)
+		self.play(Write(ex3a1_1))
+		box3a1_1 = SurroundingRectangle(ex3a1_1[0][16])
+		self.play(Create(box3a1_1))
+		self.remove(ex3a1_1, box3a1_1)
+
+		ex3a1_2 = MathTex(r"f(-2) &= 2(-2) + 3\\ &= -4 + 3 \\ &= -1").next_to(ex3a1, DOWN)
+		self.play(Write(ex3a1_2))
+		box3a1_2 = SurroundingRectangle(ex3a1_2[0][19:])
+		self.play(Create(box3a1_2))
+		self.remove(ex3a1_2, box3a1_2)
+
+		ex3a1_3 = MathTex(r"f(0) &= 2(0) + 3\\ &= 0 + 3 \\ &= 3").next_to(ex3a1, DOWN)
+		self.play(Write(ex3a1_3))
+		box3a1_3 = SurroundingRectangle(ex3a1_3[0][16])
+		self.play(Create(box3a1_3))
+		self.remove(ex3a1_3, ex3a1, box3a1_3)
+
+		ex3b1 = MathTex(r"f(x) &= 3x^2-1", substrings_to_isolate="x").set_color_by_tex("x", '#00FFEE')
+		self.play(Write(ex3b1))
+
+		ex3b1_1 = MathTex(r"f(2) &= 3(2)^2-1 \\ &= 3(4) - 1 \\ &= 12-1 \\ &=11").next_to(ex3b1, DOWN)
+		self.play(Write(ex3b1_1))
+		box3b1_1 = SurroundingRectangle(ex3b1_1[0][-2:])
+		self.play(Create(box3b1_1))
+		self.remove(ex3b1_1, box3b1_1)
+
+		ex3b1_2 = MathTex(r"f(-2) &= 3(-2)^2-1 \\ &= 3(4) - 1 \\ &= 12-1 \\ &=11").next_to(ex3b1, DOWN)
+		self.play(Write(ex3b1_2))
+		box3b1_2 = SurroundingRectangle(ex3b1_2[0][-2:])
+		self.play(Create(box3b1_2))
+		self.remove(ex3b1_2, box3b1_2)
+
+		ex3b1_3 = MathTex(r"f(0) &= 3(0)^2-1 \\ &= 3(0) - 1 \\ &= 0-1 \\ &= -1").next_to(ex3b1, DOWN)
+		self.play(Write(ex3b1_3))
+		box3b1_3 = SurroundingRectangle(ex3b1_2[0][-2:])
+		self.play(Create(box3b1_3))
+		self.remove(ex3b1, ex3b1_3, box3b1_3)
+
+		ex3c_axes = Axes(x_range=[-3,3,1], y_range=[-2,5,1]).add_coordinates()
+
+		def func(x):
+			return x**2 - 1
+
+		graph = ex3c_axes.get_graph(func)
+		self.play(Create(ex3c_axes))
+		self.wait()
+		self.add(graph)
+		self.wait()
+
+		
+
+
