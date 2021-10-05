@@ -170,6 +170,49 @@ class FunctionMachine(Scene):
 		self.add(graph)
 		self.wait()
 
-		
+		vline1 = ex3c_axes.get_vertical_line(ex3c_axes.c2p(2, func(2)))
+		self.play(Create(vline1))
+		dot1 = Dot(ex3c_axes.c2p(2, func(2)), radius = 0.15, color=YELLOW)
+		self.play(Create(dot1))
+		hline1 = ex3c_axes.get_horizontal_line(ex3c_axes.c2p(2, func(2)))
+		self.play(Create(hline1))
 
+		self.remove(vline1, dot1, hline1)
+
+		vline2 = ex3c_axes.get_vertical_line(ex3c_axes.c2p(-2, func(-2)))
+		self.play(Create(vline2))
+		dot2 = Dot(ex3c_axes.c2p(-2, func(-2)), radius = 0.15, color=YELLOW)
+		self.play(Create(dot2))
+		hline2 = ex3c_axes.get_horizontal_line(ex3c_axes.c2p(-2, func(-2)))
+		self.play(Create(hline2))
+
+		self.remove(vline2, dot2, hline2)
+
+		dot3 = Dot(ex3c_axes.c2p(0, func(0)), radius = 0.15, color=YELLOW)
+		self.play(Create(dot3))
+
+		self.remove(dot3, graph, ex3c_axes)
+
+		tbl = Table([["x","-3", "-2", "-1", "0", "1", "2", "3"], 
+			["f(x)","-6", "3", "4", '-3', "-8", "6", "-5"]])
+		self.play(Create(tbl))
+		self.wait()
+		self.play(Indicate(tbl.get_entries((1,7))))
+		box2 = SurroundingRectangle(tbl.get_entries((2,7)))
+		self.play(Create(box2))
+		self.wait()
+		self.remove(box2)
+		self.wait()
+		self.play(Indicate(tbl.get_entries((1,3))))
+		box3 = SurroundingRectangle(tbl.get_entries((2,3)))
+		self.play(Create(box3))
+		self.wait()
+		self.remove(box3)
+		self.wait()
+		self.play(Indicate(tbl.get_entries((1,5))))
+		box4 = SurroundingRectangle(tbl.get_entries((2,5)))
+		self.play(Create(box4))
+		self.wait()
+		self.remove(box4)
+		self.wait()
 
