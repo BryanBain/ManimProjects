@@ -90,6 +90,49 @@ class IntroFunctions(Scene):
 		self.remove(ex1b_axes, line1b, dot_ex1b, rectangle)
 		self.wait()
 
+		ex2a_axes = Axes(x_range=[-3,3,1], y_range=[-3,3,1], axis_config={'include_ticks':False})
+		self.play(Create(ex2a_axes))
+		def ex2a_func(x):
+			return -0.5*x - 0.5
+		graph_2a = ex2a_axes.get_graph(ex2a_func)
+		self.play(Create(graph_2a))
+		self.wait()
+		ex2a_lines = VGroup()
+		num_lines = 10
+		for i in range(num_lines+1):
+			ex2a_lines.add(Line(ex2a_axes.c2p((-2.25+4.5*i/num_lines), -3, 0), ex2a_axes.c2p((-2.25+4.5*i/num_lines), 3, 0), color=ORANGE))
+		self.play(FadeIn(ex2a_lines), run_time=2)
+		self.wait()
+		self.remove(ex2a_axes, graph_2a, ex2a_lines)
+
+		ex2b_axes = Axes(x_range=[-3,3,1], y_range=[-3,3,1], axis_config={'include_ticks':False})
+		self.play(Create(ex2b_axes))
+		def ex2b_func(x):
+			return -0.5*x*x + 0.5
+		graph_2b = ex2b_axes.get_graph(ex2b_func)
+		self.play(Create(graph_2b))
+		self.wait()
+		ex2b_lines = VGroup()
+		num_lines = 10
+		for i in range(num_lines+1):
+			ex2b_lines.add(Line(ex2b_axes.c2p((-2.25+4.5*i/num_lines), -3, 0), ex2b_axes.c2p((-2.25+4.5*i/num_lines), 3, 0), color=ORANGE))
+		self.play(FadeIn(ex2b_lines), run_time=2)
+		self.wait()
+		self.remove(ex2b_axes, graph_2b, ex2b_lines)
+
+		ex2c_axes = Axes(x_range=[-3,3,1], y_range=[-3,3,1], axis_config={'include_ticks':False})
+		self.play(Create(ex2c_axes))
+		ellipse = Ellipse(width = 3, height = 1.5)
+		self.play(Create(ellipse))
+		self.wait()
+		line3c = Line(ex2c_axes.c2p(-0.25,-3,0), ex2c_axes.c2p(-0.25,3,0))
+		self.play(Create(line3c))
+		self.wait()
+
+		self.remove(ex2c_axes, ellipse, line3c)
+
+
+
 class FunctionMachine(Scene):
 	def construct(self):
 		intro_text = Text("Functions are nothing more than machines\n"
