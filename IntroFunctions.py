@@ -2,22 +2,78 @@ from manim import *
 
 class IntroFunctions(Scene):
 	def construct(self):
+		title = Title("Intro to Functions")
+		self.play(Write(title))
+		self.wait()
+
+		rel_def = Text("A relation is a set (a list) of ordered pairs.", t2c={' relatio': YELLOW})
+		self.play(Write(rel_def), run_time = 2)
+		self.play(rel_def.animate.shift(UP*2))
+		self.wait()
+
+		domain_def = Text("The domain is the set (the list) of all input values (x).", t2c={' domai':YELLOW}).scale(0.9)
+		self.play(Write(domain_def), run_time = 2)
+		self.play(domain_def.animate.shift(UP))
+		self.wait()
+
+		range_def = Text("The range is the set (the list) of all output values (y).", t2c={' rang':YELLOW}).scale(0.9)
+		self.play(Write(range_def), run_time = 2)
+		self.wait()
+		self.remove(title, rel_def, domain_def, range_def)
+
 		func_def = Text("A function is a relation \nin which each element of the domain\n"
 			"has only one element in the range.", t2c={' functio':YELLOW})
 
 		self.play(Write(func_def), run_time = 2)
+		self.wait(2)
 		self.remove(func_def)
+
+		func_machine = Text("Functions are like machines that accept an input (x)\n"
+			"processes it, and then gives an output (y).")
+		self.play(Write(func_machine), run_time = 3)
+		self.wait(2)
+		self.remove(func_machine)
+
+		phone = Text("Sending a text message is a function.")
+		self.play(Write(phone))
+		self.play(phone.animate.shift(3*UP))
+		phone_input = Text("The message itself is the input.")
+		self.play(Write(phone_input))
+		self.play(phone_input.animate.shift(2*UP))
+		phone_machine = Text("Pressing the SEND button processes the text.")
+		self.play(Write(phone_machine))
+		self.play(phone_machine.animate.shift(UP))
+		phone_output = Text("The recipient getting the message is the output.")
+		self.play(Write(phone_output))
+		self.wait(2)
+		self.remove(phone, phone_input, phone_machine, phone_output)
+
+		vlt_intro = Text("We can determine if a relation is a function by\n"
+			"drawing vertical lines through the graph of the relation.").scale(0.9)
+		self.play(Write(vlt_intro))
+		self.play(vlt_intro.animate.shift(2*UP))
+
+		test = Text("The Vertical Line Test is a visual way to determine\n"
+			"if a relation is a function.", t2c = {'[3:19]': BLUE})
+		self.play(Write(test), run_time = 2)
+		self.wait(2)
+		erase = VGroup(vlt_intro, test)
+		self.play(Unwrite(erase))
 
 		vlt = Text("In other words, if you plot the relation,\n"
 			"each vertical line hits the plot \n"
-			"exactly once.")
+			"either exactly once or not at all.")
 		self.play(Write(vlt), run_time = 2)
+		self.wait(2)
 		self.remove(vlt)
 
+class Example1(Scene):
+	def construct(self):
 		ex1a = Tex(r"$\{(1,5), \, (2, 5), \, (3, 7), \, (4, 8)\}$")
 
 		self.play(Write(ex1a), run_time = 3)
 		self.play(ex1a.animate.shift(UP*3))
+		self.wait()
 
 		ex1a_axes = Axes(x_range = [0,5,1], y_range = [0,9,1]).add_coordinates()
 		x1a = 1
@@ -52,6 +108,7 @@ class IntroFunctions(Scene):
 		self.play(Create(line3a))
 		line4a = Line(ex1a_axes.c2p(4,0,0), ex1a_axes.c2p(4,9,0))
 		self.play(Create(line4a))
+		self.wait(2)
 
 		self.remove(ex1a_axes, dot_ex1a, line1a, line2a, line3a, line4a)
 
@@ -87,6 +144,7 @@ class IntroFunctions(Scene):
 		self.play(Create(line1b))
 		rectangle = SurroundingRectangle(VGroup(dot1b, dot2b))
 		self.play(Create(rectangle))
+		self.wait(2)
 		self.remove(ex1b_axes, line1b, dot_ex1b, rectangle)
 		self.wait()
 
@@ -102,7 +160,7 @@ class IntroFunctions(Scene):
 		for i in range(num_lines+1):
 			ex2a_lines.add(Line(ex2a_axes.c2p((-2.25+4.5*i/num_lines), -3, 0), ex2a_axes.c2p((-2.25+4.5*i/num_lines), 3, 0), color=ORANGE))
 		self.play(FadeIn(ex2a_lines), run_time=2)
-		self.wait()
+		self.wait(2)
 		self.remove(ex2a_axes, graph_2a, ex2a_lines)
 
 		ex2b_axes = Axes(x_range=[-3,3,1], y_range=[-3,3,1], axis_config={'include_ticks':False})
@@ -117,7 +175,7 @@ class IntroFunctions(Scene):
 		for i in range(num_lines+1):
 			ex2b_lines.add(Line(ex2b_axes.c2p((-2.25+4.5*i/num_lines), -3, 0), ex2b_axes.c2p((-2.25+4.5*i/num_lines), 3, 0), color=ORANGE))
 		self.play(FadeIn(ex2b_lines), run_time=2)
-		self.wait()
+		self.wait(2)
 		self.remove(ex2b_axes, graph_2b, ex2b_lines)
 
 		ex2c_axes = Axes(x_range=[-3,3,1], y_range=[-3,3,1], axis_config={'include_ticks':False})
@@ -127,7 +185,7 @@ class IntroFunctions(Scene):
 		self.wait()
 		line3c = Line(ex2c_axes.c2p(-0.25,-3,0), ex2c_axes.c2p(-0.25,3,0))
 		self.play(Create(line3c))
-		self.wait()
+		self.wait(2)
 
 		self.remove(ex2c_axes, ellipse, line3c)
 
@@ -145,12 +203,9 @@ class FunctionMachine(Scene):
 		function_box = Tex(r"$f(x) = \sqrt{x}$")
 		box = SurroundingRectangle(function_box, color=RED, buff=0.25)
 		machine = VGroup(function_box, box).scale(1.5).next_to(input_arrow, RIGHT)
-		# machine = VGroup(function_box, box)
 		self.play(Write(machine))
 		self.play(Write(input_value))
 		self.play(Create(input_arrow))
-		# self.play(Write(function_box))
-		# self.play(Create(box))
 		self.remove(input_arrow, input_value)
 		func_eval = Tex(r"$f(49) = \sqrt{49}$")
 		self.play(ReplacementTransform(function_box, func_eval))
