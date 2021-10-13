@@ -196,6 +196,7 @@ class FunctionMachine(Scene):
 		intro_text = Text("Functions are nothing more than machines\n"
 			"that accept an input and produce an output.")
 		self.play(Write(intro_text))
+		self.wait(2)
 		self.remove(intro_text)
 
 		input_arrow = Arrow(start=LEFT*5, end=LEFT*2, color=YELLOW)
@@ -206,6 +207,7 @@ class FunctionMachine(Scene):
 		self.play(Write(machine))
 		self.play(Write(input_value))
 		self.play(Create(input_arrow))
+		self.wait()
 		self.remove(input_arrow, input_value)
 		func_eval = Tex(r"$f(49) = \sqrt{49}$")
 		self.play(ReplacementTransform(function_box, func_eval))
@@ -213,49 +215,79 @@ class FunctionMachine(Scene):
 		self.play(Create(output_arrow))
 		output_value = Tex("7").next_to(output_arrow, RIGHT, buff=0.5).scale(2)
 		self.play(Write(output_value))
+		self.wait()
 		self.remove(output_value, output_arrow, func_eval, box)
+
+		ex3_text = Tex("For each of the following, find $f(2)$, $f(-2)$ and $f(0)$.")
+		self.play(Write(ex3_text), run_time=2)
+		self.wait(2)
+		self.remove(ex3_text)
 
 		ex3a1 = MathTex(r"f(x) &= 2x + 3", substrings_to_isolate="x").set_color_by_tex("x", '#00FFEE')
 		self.play(Write(ex3a1))
 
 		ex3a1_1 = MathTex(r"f(2) &= 2(2) + 3\\ &= 4 + 3 \\ &= 7").next_to(ex3a1, DOWN)
-		self.play(Write(ex3a1_1))
-		box3a1_1 = SurroundingRectangle(ex3a1_1[0][16])
+		line3a_1 = ex3a1_1[0][0:11]
+		self.play(Write(line3a_1))
+		self.wait()
+		line3a_2 = ex3a1_1[0][11:15]
+		self.play(Write(line3a_2))
+		self.wait()
+		answer3a = ex3a1_1[0][15:17]
+		self.play(Write(answer3a))
+		box3a1_1 = SurroundingRectangle(answer3a[1])
 		self.play(Create(box3a1_1))
-		self.remove(ex3a1_1, box3a1_1)
+		self.remove(line3a_1, line3a_2, answer3a, box3a1_1)
+		self.wait()
 
 		ex3a1_2 = MathTex(r"f(-2) &= 2(-2) + 3\\ &= -4 + 3 \\ &= -1").next_to(ex3a1, DOWN)
-		self.play(Write(ex3a1_2))
+		line3a1_2 = ex3a1_2[0][0:13]
+		self.play(Write(line3a1_2))
+		line3a1_3 = ex3a1_2[0][13:18]
+		self.play(Write(line3a1_3))
+		line3a1_4 = ex3a1_2[0][18:21]
+		self.play(Write(line3a1_4))
 		box3a1_2 = SurroundingRectangle(ex3a1_2[0][19:])
 		self.play(Create(box3a1_2))
-		self.remove(ex3a1_2, box3a1_2)
+		self.remove(ex3a1_2, line3a1_2, line3a1_3, line3a1_4, box3a1_2)
 
 		ex3a1_3 = MathTex(r"f(0) &= 2(0) + 3\\ &= 0 + 3 \\ &= 3").next_to(ex3a1, DOWN)
-		self.play(Write(ex3a1_3))
+		line3c_1 = ex3a1_3[0][0:11]
+		self.play(Write(line3c_1))
+		self.wait()
+		line3c_2 = ex3a1_3[0][11:15]
+		self.play(Write(line3c_2))
+		self.wait()
+		line3c_3 = ex3a1_3[0][15:17]
+		self.play(Write(line3c_3))
 		box3a1_3 = SurroundingRectangle(ex3a1_3[0][16])
 		self.play(Create(box3a1_3))
-		self.remove(ex3a1_3, ex3a1, box3a1_3)
+		self.remove(ex3a1_3, ex3a1, box3a1_3, line3c_1, line3c_2, line3c_3)
 
-		ex3b1 = MathTex(r"f(x) &= 3x^2-1", substrings_to_isolate="x").set_color_by_tex("x", '#00FFEE')
-		self.play(Write(ex3b1))
+		ex2 = MathTex(r"f(x) &= 3x^2-1", substrings_to_isolate="x").set_color_by_tex("x", '#00FFEE')
+		self.play(Write(ex2))
 
-		ex3b1_1 = MathTex(r"f(2) &= 3(2)^2-1 \\ &= 3(4) - 1 \\ &= 12-1 \\ &=11").next_to(ex3b1, DOWN)
-		self.play(Write(ex3b1_1))
+		ex3b1_1 = MathTex(r"f(2) &= 3(2)^2-1 \\ &= 3(4) - 1 \\ &= 12-1 \\ &=11").next_to(ex2, DOWN)
+		line3b1_1 = ex3b1_1[0][0:12]
+		self.play(Write(line3b1_1))
+		self.wait()
+		
+		# self.play(Write(ex3b1_1))
 		box3b1_1 = SurroundingRectangle(ex3b1_1[0][-2:])
 		self.play(Create(box3b1_1))
 		self.remove(ex3b1_1, box3b1_1)
 
-		ex3b1_2 = MathTex(r"f(-2) &= 3(-2)^2-1 \\ &= 3(4) - 1 \\ &= 12-1 \\ &=11").next_to(ex3b1, DOWN)
+		ex3b1_2 = MathTex(r"f(-2) &= 3(-2)^2-1 \\ &= 3(4) - 1 \\ &= 12-1 \\ &=11").next_to(ex2, DOWN)
 		self.play(Write(ex3b1_2))
 		box3b1_2 = SurroundingRectangle(ex3b1_2[0][-2:])
 		self.play(Create(box3b1_2))
 		self.remove(ex3b1_2, box3b1_2)
 
-		ex3b1_3 = MathTex(r"f(0) &= 3(0)^2-1 \\ &= 3(0) - 1 \\ &= 0-1 \\ &= -1").next_to(ex3b1, DOWN)
+		ex3b1_3 = MathTex(r"f(0) &= 3(0)^2-1 \\ &= 3(0) - 1 \\ &= 0-1 \\ &= -1").next_to(ex2, DOWN)
 		self.play(Write(ex3b1_3))
 		box3b1_3 = SurroundingRectangle(ex3b1_2[0][-2:])
 		self.play(Create(box3b1_3))
-		self.remove(ex3b1, ex3b1_3, box3b1_3)
+		self.remove(ex2, ex3b1_3, box3b1_3)
 
 		ex3c_axes = Axes(x_range=[-3,3,1], y_range=[-2,5,1]).add_coordinates()
 
