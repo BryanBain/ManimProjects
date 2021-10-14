@@ -225,66 +225,45 @@ class FunctionMachine(Scene):
 
 		ex3a1 = MathTex(r"f(x) &= 2x + 3", substrings_to_isolate="x").set_color_by_tex("x", '#00FFEE')
 		self.play(Write(ex3a1))
+		self.wait(3)
 
 		ex3a1_1 = MathTex(r"f(2) &= 2(2) + 3\\ &= 4 + 3 \\ &= 7").next_to(ex3a1, DOWN)
-		line3a_1 = ex3a1_1[0][0:11]
-		self.play(Write(line3a_1))
-		self.wait()
-		line3a_2 = ex3a1_1[0][11:15]
-		self.play(Write(line3a_2))
-		self.wait()
-		answer3a = ex3a1_1[0][15:17]
-		self.play(Write(answer3a))
-		box3a1_1 = SurroundingRectangle(answer3a[1])
+		self.play(Write(ex3a1_1), run_time=6)
+		box3a1_1 = SurroundingRectangle(ex3a1_1[0][-1:])
 		self.play(Create(box3a1_1))
-		self.remove(line3a_1, line3a_2, answer3a, box3a1_1)
+		self.remove(ex3a1_1, box3a1_1)
 		self.wait()
 
 		ex3a1_2 = MathTex(r"f(-2) &= 2(-2) + 3\\ &= -4 + 3 \\ &= -1").next_to(ex3a1, DOWN)
-		line3a1_2 = ex3a1_2[0][0:13]
-		self.play(Write(line3a1_2))
-		line3a1_3 = ex3a1_2[0][13:18]
-		self.play(Write(line3a1_3))
-		line3a1_4 = ex3a1_2[0][18:21]
-		self.play(Write(line3a1_4))
-		box3a1_2 = SurroundingRectangle(ex3a1_2[0][19:])
+		self.play(Write(ex3a1_2), run_time=6)
+		box3a1_2 = SurroundingRectangle(ex3a1_2[0][-2:])
 		self.play(Create(box3a1_2))
-		self.remove(ex3a1_2, line3a1_2, line3a1_3, line3a1_4, box3a1_2)
+		self.remove(ex3a1_2, box3a1_2)
 
 		ex3a1_3 = MathTex(r"f(0) &= 2(0) + 3\\ &= 0 + 3 \\ &= 3").next_to(ex3a1, DOWN)
-		line3c_1 = ex3a1_3[0][0:11]
-		self.play(Write(line3c_1))
-		self.wait()
-		line3c_2 = ex3a1_3[0][11:15]
-		self.play(Write(line3c_2))
-		self.wait()
-		line3c_3 = ex3a1_3[0][15:17]
-		self.play(Write(line3c_3))
+		self.play(Write(ex3a1_3), run_time=6)
 		box3a1_3 = SurroundingRectangle(ex3a1_3[0][16])
 		self.play(Create(box3a1_3))
-		self.remove(ex3a1_3, ex3a1, box3a1_3, line3c_1, line3c_2, line3c_3)
+		self.remove(ex3a1, ex3a1_3, box3a1_3)
 
 		ex2 = MathTex(r"f(x) &= 3x^2-1", substrings_to_isolate="x").set_color_by_tex("x", '#00FFEE')
 		self.play(Write(ex2))
+		self.wait(3)
 
 		ex3b1_1 = MathTex(r"f(2) &= 3(2)^2-1 \\ &= 3(4) - 1 \\ &= 12-1 \\ &=11").next_to(ex2, DOWN)
-		line3b1_1 = ex3b1_1[0][0:12]
-		self.play(Write(line3b1_1))
-		self.wait()
-		
-		# self.play(Write(ex3b1_1))
+		self.play(Write(ex3b1_1), run_time=6)
 		box3b1_1 = SurroundingRectangle(ex3b1_1[0][-2:])
 		self.play(Create(box3b1_1))
 		self.remove(ex3b1_1, box3b1_1)
 
 		ex3b1_2 = MathTex(r"f(-2) &= 3(-2)^2-1 \\ &= 3(4) - 1 \\ &= 12-1 \\ &=11").next_to(ex2, DOWN)
-		self.play(Write(ex3b1_2))
+		self.play(Write(ex3b1_2), run_time=6)
 		box3b1_2 = SurroundingRectangle(ex3b1_2[0][-2:])
 		self.play(Create(box3b1_2))
 		self.remove(ex3b1_2, box3b1_2)
 
 		ex3b1_3 = MathTex(r"f(0) &= 3(0)^2-1 \\ &= 3(0) - 1 \\ &= 0-1 \\ &= -1").next_to(ex2, DOWN)
-		self.play(Write(ex3b1_3))
+		self.play(Write(ex3b1_3), run_time=6)
 		box3b1_3 = SurroundingRectangle(ex3b1_2[0][-2:])
 		self.play(Create(box3b1_3))
 		self.remove(ex2, ex3b1_3, box3b1_3)
@@ -306,6 +285,7 @@ class FunctionMachine(Scene):
 		self.play(Create(dot1))
 		hline1 = ex3c_axes.get_horizontal_line(ex3c_axes.c2p(2, func(2)))
 		self.play(Create(hline1))
+		self.wait(2)
 
 		self.remove(vline1, dot1, hline1)
 
@@ -315,11 +295,13 @@ class FunctionMachine(Scene):
 		self.play(Create(dot2))
 		hline2 = ex3c_axes.get_horizontal_line(ex3c_axes.c2p(-2, func(-2)))
 		self.play(Create(hline2))
+		self.wait(2)
 
 		self.remove(vline2, dot2, hline2)
 
 		dot3 = Dot(ex3c_axes.c2p(0, func(0)), radius = 0.15, color=YELLOW)
 		self.play(Create(dot3))
+		self.wait(2)
 
 		self.remove(dot3, graph, ex3c_axes)
 
