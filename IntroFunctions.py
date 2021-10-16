@@ -9,29 +9,29 @@ class IntroFunctions(Scene):
 		rel_def = Text("A relation is a set (a list) of ordered pairs.", t2c={' relatio': YELLOW})
 		self.play(Write(rel_def), run_time = 2)
 		self.play(rel_def.animate.shift(UP*2))
-		self.wait()
+		self.wait(3)
 
 		domain_def = Text("The domain is the set (the list) of all input values (x).", t2c={' domai':YELLOW}).scale(0.9)
 		self.play(Write(domain_def), run_time = 2)
 		self.play(domain_def.animate.shift(UP))
-		self.wait()
+		self.wait(3)
 
 		range_def = Text("The range is the set (the list) of all output values (y).", t2c={' rang':YELLOW}).scale(0.9)
 		self.play(Write(range_def), run_time = 2)
-		self.wait()
+		self.wait(3)
 		self.remove(title, rel_def, domain_def, range_def)
 
 		func_def = Text("A function is a relation \nin which each element of the domain\n"
 			"has only one element in the range.", t2c={' functio':YELLOW})
 
 		self.play(Write(func_def), run_time = 2)
-		self.wait(2)
+		self.wait(8)
 		self.remove(func_def)
 
 		func_machine = Text("Functions are like machines that accept an input (x)\n"
 			"processes it, and then gives an output (y).")
 		self.play(Write(func_machine), run_time = 3)
-		self.wait(2)
+		self.wait(4)
 		self.remove(func_machine)
 
 		phone = Text("Sending a text message is a function.")
@@ -45,7 +45,7 @@ class IntroFunctions(Scene):
 		self.play(phone_machine.animate.shift(UP))
 		phone_output = Text("The recipient getting the message is the output.")
 		self.play(Write(phone_output))
-		self.wait(2)
+		self.wait(4)
 		self.remove(phone, phone_input, phone_machine, phone_output)
 
 		vlt_intro = Text("We can determine if a relation is a function by\n"
@@ -56,7 +56,7 @@ class IntroFunctions(Scene):
 		test = Text("The Vertical Line Test is a visual way to determine\n"
 			"if a relation is a function.", t2c = {'[3:19]': BLUE})
 		self.play(Write(test), run_time = 2)
-		self.wait(2)
+		self.wait(6)
 		erase = VGroup(vlt_intro, test)
 		self.play(Unwrite(erase))
 
@@ -64,7 +64,7 @@ class IntroFunctions(Scene):
 			"each vertical line hits the plot \n"
 			"either exactly once or not at all.")
 		self.play(Write(vlt), run_time = 2)
-		self.wait(2)
+		self.wait(4)
 		self.remove(vlt)
 
 class Example1(Scene):
@@ -196,7 +196,7 @@ class FunctionMachine(Scene):
 		intro_text = Text("Functions are nothing more than machines\n"
 			"that accept an input and produce an output.")
 		self.play(Write(intro_text))
-		self.wait(2)
+		self.wait(3)
 		self.remove(intro_text)
 
 		input_arrow = Arrow(start=LEFT*5, end=LEFT*2, color=YELLOW)
@@ -207,25 +207,26 @@ class FunctionMachine(Scene):
 		self.play(Write(machine))
 		self.play(Write(input_value))
 		self.play(Create(input_arrow))
-		self.wait()
+		self.wait(3)
 		self.remove(input_arrow, input_value)
 		func_eval = Tex(r"$f(49) = \sqrt{49}$")
 		self.play(ReplacementTransform(function_box, func_eval))
+		self.wait(2)
 		output_arrow = Arrow(start=2.25*RIGHT, end=5.25*RIGHT, color=YELLOW)
 		self.play(Create(output_arrow))
 		output_value = Tex("7").next_to(output_arrow, RIGHT, buff=0.5).scale(2)
 		self.play(Write(output_value))
-		self.wait()
+		self.wait(2)
 		self.remove(output_value, output_arrow, func_eval, box)
 
 		ex3_text = Tex("For each of the following, find $f(2)$, $f(-2)$ and $f(0)$.")
 		self.play(Write(ex3_text), run_time=2)
-		self.wait(2)
+		self.wait(4)
 		self.remove(ex3_text)
 
 		ex3a1 = MathTex(r"f(x) &= 2x + 3", substrings_to_isolate="x").set_color_by_tex("x", '#00FFEE')
 		self.play(Write(ex3a1))
-		self.wait(3)
+		self.wait(7)
 
 		ex3a1_1 = MathTex(r"f(2) &= 2(2) + 3\\ &= 4 + 3 \\ &= 7").next_to(ex3a1, DOWN)
 		self.play(Write(ex3a1_1), run_time=6)
