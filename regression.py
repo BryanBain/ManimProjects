@@ -19,4 +19,15 @@ class DataSet(Scene):
 		self.add(axes)
 		self.play(Create(points))
 
+		func1 = lambda x: 1.25*x
+		reg_eq = lambda x: 1.513534*x - 5.768144
+
+		line1 = axes.get_graph(func1)
+		self.play(Create(line1))
+		self.wait()
+		line2 = axes.get_graph(reg_eq)
+		self.play(Transform(line1,line2), run_time=2)
+		self.wait()
+		self.remove(line1, line2)
+
 		# Regression equation: y-hat = 1.5135347194978421x - 5.7681443703413038
