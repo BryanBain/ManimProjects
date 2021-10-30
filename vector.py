@@ -89,11 +89,14 @@ class VectorScaling(Scene):
 
 		a_vec = Line(plane2.c2p(0,0), plane2.c2p(3,-2), color=YELLOW).add_tip()
 		a_vec_name = Tex(r"$\vec{a}$", color=YELLOW).next_to(a_vec, RIGHT)
-		a_vec_lbl = Tex(r"$\vec{a} = \begin{bmatrix} 3 \\ -2 \end{bmatrix}$", color=YELLOW).shift(4*RIGHT)
+		a_vec_lbl = Tex(r"$\vec{a} = \begin{bmatrix} 3 \\ -2 \end{bmatrix}$", 
+			color=YELLOW).shift(4*RIGHT)
 		a_group = VGroup(a_vec, a_vec_name, a_vec_lbl)
-		neg_vec = Line(plane2.c2p(0,0), plane2.c2p(-3,2), color=RED).add_tip()
-		neg_vec_name = Tex(r"$-\vec{a}$", color=ORANGE).next_to(a_vec, RIGHT)
-		neg_vec_lbl = Tex(r"$-\vec{a} = \begin{bmatrix} -3 \\ 2 \end{bmatrix}$", color=ORANGE).shift(4*RIGHT)
+		neg_vec = Line(plane2.c2p(0,0), plane2.c2p(-3,2), 
+			color=RED).add_tip()
+		neg_vec_name = Tex(r"$-\vec{a}$", color=ORANGE).next_to(neg_vec, LEFT)
+		neg_vec_lbl = Tex(r"$-1\vec{a} = \begin{bmatrix} -3 \\ 2 \end{bmatrix}$", 
+			color=ORANGE).shift(4*RIGHT)
 		neg_group = VGroup(neg_vec, neg_vec_name, neg_vec_lbl)
 
 		self.play(Create(a_vec))
@@ -105,3 +108,50 @@ class VectorScaling(Scene):
 		self.wait()
 		self.remove(a_group, neg_group, plane2)
 		self.wait()
+
+		example_text = Tex(r"Given $\vec{v}=\begin{bmatrix} 1 \\ -1 \end{bmatrix}$ and "
+			r"$\vec{w}=\begin{bmatrix} -2 \\ 0 \end{bmatrix}$, find $3\vec{v}+\vec{w}$")
+		self.play(Write(example_text))
+		self.wait()
+		self.remove(example_text)
+
+		example_plane = NumberPlane(x_range=[-4,4,1], 
+			y_range=[-4,4,1]).add_coordinates().to_edge(LEFT)
+		v_example = Line(start=example_plane.c2p(0,0), 
+			end=example_plane.c2p(1,-1), color=YELLOW).add_tip()
+		v_example_lbl = Tex(r"$\vec{v}$", color=YELLOW).next_to(v_example)
+		self.play(Create(example_plane))
+		self.play(Create(v_example))
+		self.play(Write(v_example_lbl))
+
+		w_example = Line(start=example_plane.c2p(0,0), end=example_plane.c2p(-2,0),
+			color=BLUE).add_tip()
+		w_example_lbl = Tex(r"$\vec{w}$", color=BLUE).next_to(w_example, UP)
+		self.play(Create(w_example))
+		self.play(Write(w_example_lbl))
+		w_example_lbl.add_updater(lambda x: x.next_to(w_example, UP))
+		scale_v_example = Line(start=example_plane.c2p(0,0), 
+			end=example_plane.c2p(3,-3), color=YELLOW).add_tip()
+		scale_v_lbl = Tex(r"$3\vec{v}$", color=YELLOW).next_to(scale_v_example)
+		self.play(Transform(v_example, scale_v_example))
+		self.play(Transform(v_example_lbl, scale_v_lbl))
+		example_resultant = Line(start=example_plane.c2p(3,-3), end=example_plane.c2p(1,-3),
+			color=BLUE).add_tip()
+		self.play(Transform(w_example, example_resultant))
+		self.wait()
+
+		vec_sum = Line(start=example_plane.c2p(0,0), end=example_plane.c2p(1,-3),
+			color=PURPLE).add_tip()
+		vec_sum_lbl = Tex(r"$\vec{v}+\vec{w}$", color=PURPLE).next_to(vec_sum, LEFT)
+		self.wait()
+		self.play(Create(vec_sum))
+		self.play(Write(vec_sum_lbl))
+		self.wait()
+
+
+
+
+
+
+
+
