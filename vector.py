@@ -120,21 +120,27 @@ class VectorScaling(Scene):
 		v_example = Line(start=example_plane.c2p(0,0), 
 			end=example_plane.c2p(1,-1), color=YELLOW).add_tip()
 		v_example_lbl = Tex(r"$\vec{v}$", color=YELLOW).next_to(v_example)
+		v_example_tex = Tex(r"$\vec{v}=\begin{bmatrix} 1 \\ -1 \end{bmatrix}$").shift(3.5*RIGHT + 2*UP)
 		self.play(Create(example_plane))
 		self.play(Create(v_example))
 		self.play(Write(v_example_lbl))
+		self.play(Write(v_example_tex))
 
 		w_example = Line(start=example_plane.c2p(0,0), end=example_plane.c2p(-2,0),
 			color=BLUE).add_tip()
 		w_example_lbl = Tex(r"$\vec{w}$", color=BLUE).next_to(w_example, UP)
+		w_example_tex = Tex(r"$\vec{w}=\begin{bmatrix} -2 \\ 0 \end{bmatrix}$").next_to(v_example_tex, RIGHT)
 		self.play(Create(w_example))
 		self.play(Write(w_example_lbl))
+		self.play(Write(w_example_tex))
 		w_example_lbl.add_updater(lambda x: x.next_to(w_example, UP))
 		scale_v_example = Line(start=example_plane.c2p(0,0), 
 			end=example_plane.c2p(3,-3), color=YELLOW).add_tip()
 		scale_v_lbl = Tex(r"$3\vec{v}$", color=YELLOW).next_to(scale_v_example)
+		scale_v_tex = Tex(r"$3\vec{v} = \begin{bmatrix} 3 \\ -3 \end{bmatrix}$").next_to(w_example_tex, LEFT)
 		self.play(Transform(v_example, scale_v_example))
 		self.play(Transform(v_example_lbl, scale_v_lbl))
+		self.play(Transform(v_example_tex, scale_v_tex))
 		example_resultant = Line(start=example_plane.c2p(3,-3), end=example_plane.c2p(1,-3),
 			color=BLUE).add_tip()
 		self.play(Transform(w_example, example_resultant))
@@ -143,12 +149,42 @@ class VectorScaling(Scene):
 		vec_sum = Line(start=example_plane.c2p(0,0), end=example_plane.c2p(1,-3),
 			color=PURPLE).add_tip()
 		vec_sum_lbl = Tex(r"$\vec{v}+\vec{w}$", color=PURPLE).next_to(vec_sum, LEFT)
+		vec_sum_tex = Tex(r"$3\vec{v} + \vec{w} = \begin{bmatrix} 1 \\ -3 \end{bmatrix}$", color=PURPLE).next_to(scale_v_tex, 2*DOWN)
 		self.wait()
 		self.play(Create(vec_sum))
 		self.play(Write(vec_sum_lbl))
+		self.play(Write(vec_sum_tex))
 		self.wait()
 
+class BasisVectors(VectorScene):
+	def construct(self):
+		basis_text = Tex(r"Two important vectors are")
+		basis_text2 = Tex(r"$\hat{i} = \begin{bmatrix} 1 \\ 0 \end{bmatrix}$ and $\hat{j} = \begin{bmatrix} 0 \\ 1 \end{bmatrix}$").next_to(basis_text, DOWN)
+		basis_text_group = VGroup(basis_text, basis_text2)
+		self.play(Write(basis_text_group))
+		self.wait()
+		self.play(basis_text_group.animate.shift(3*UP))
+		basis_text3 = Tex("These will serve as the basis for matrix multiplication.")
+		self.play(Write(basis_text3))
+		self.wait()
+		self.remove(basis_text_group, basis_text3)
 
+		plane = self.add_plane(animate=True)
+		self.wait()
+		bases = self.get_basis_vectors()
+		bases_lbls = self.get_basis_vector_labels()
+		self.wait()
+		self.play(Create(bases))
+		self.play(Create(bases_lbls))
+		self.wait()
+		self.remove(bases, bases_lbls, plane)
+		self.wait()
+
+		basis_combination = Tex(r"Any vector can be written as a combination of a scalar ")
+		basis_combination2 = Tex(r"and the basis vectors $\hat{\imath}$ and $\hat{\jmath}$").next_to(basis_combination, DOWN)
+		basis_text = VGroup(basis_combination, basis_combination2)
+		self.play(Write(basis_text))
+		self.wait()
 
 
 
