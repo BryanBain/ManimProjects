@@ -59,6 +59,14 @@ class VectorScaling(Scene):
 		scalar_def = Text("A scalar is another name for a real number.", t2c={' scala': BLUE})
 		self.play(Write(scalar_def))
 		self.remove(scalar_def)
+		self.wait()
+
+		scalar_explanation = Tex("When we mutliply a vector by a scalar,")
+		scalar_explanation2 = Tex("we multiply both coordinate values by the scalar.").next_to(scalar_explanation, DOWN)
+		scalar_group = VGroup(scalar_explanation, scalar_explanation2)
+		self.play(Write(scalar_group))
+		self.wait()
+		self.remove(scalar_group)
 
 		plane = NumberPlane(x_range=[-1,7,1], y_range=[-6,3,1], 
 			x_length=8, y_length=8, axis_config={"unit_size":0.5}).add_coordinates().to_edge(LEFT)
@@ -119,7 +127,7 @@ class VectorScaling(Scene):
 			y_range=[-4,4,1]).add_coordinates().to_edge(LEFT)
 		v_example = Line(start=example_plane.c2p(0,0), 
 			end=example_plane.c2p(1,-1), color=YELLOW).add_tip()
-		v_example_lbl = Tex(r"$\vec{v}$", color=YELLOW).next_to(v_example)
+		v_example_lbl = Tex(r"$\vec{v}$", color=YELLOW).next_to(v_example.get_center())
 		v_example_tex = Tex(r"$\vec{v}=\begin{bmatrix} 1 \\ -1 \end{bmatrix}$").shift(3.5*RIGHT + 2*UP)
 		self.play(Create(example_plane))
 		self.play(Create(v_example))
@@ -181,10 +189,126 @@ class BasisVectors(VectorScene):
 		self.wait()
 
 		basis_combination = Tex(r"Any vector can be written as a combination of a scalar ")
-		basis_combination2 = Tex(r"and the basis vectors $\hat{\imath}$ and $\hat{\jmath}$").next_to(basis_combination, DOWN)
+		basis_combination2 = Tex(r"and the basis vectors $\hat{\imath}$ and $\hat{\jmath}.$").next_to(basis_combination, DOWN)
 		basis_text = VGroup(basis_combination, basis_combination2)
 		self.play(Write(basis_text))
 		self.wait()
+		self.remove(basis_text)
+		self.wait()
+
+		plane = self.add_plane(animate=True)
+		self.wait()
+		v = self.add_vector([3,2], color=YELLOW)
+		self.wait()
+		v_coords = self.vector_to_coords(v)
+		self.wait()
+		v_lbl = Tex(r"$3\hat{\imath} + 2\hat{\jmath}$", color=YELLOW).move_to(4*RIGHT + 2*UP)
+		self.wait()
+		self.play(Write(v_lbl))
+		self.wait()
+		self.remove(v, v_lbl, plane)
+		self.wait()
+
+		example = Tex("Example.", r"Write ", r"$\vec{w} = \begin{bmatrix} -3 \\ 1 \end{bmatrix}$", r" using the basis vectors $\hat{\imath}$ and $\hat{\jmath}$.",)
+		example.set_color_by_tex("xample", '#FE0000')
+		self.play(Write(example))
+		self.wait()
+		self.play(example.animate.shift(2*UP))
+		self.wait()
+		i_box = SurroundingRectangle(example[2][4:6])
+		self.play(Create(i_box))
+		self.wait()
+		answer = Tex(r"$\vec{w} = -3\hat{\imath}$")
+		self.play(Write(answer))
+		self.wait()
+		self.remove(i_box)
+		j_box = SurroundingRectangle(example[2][6])
+		self.play(Create(j_box))
+		self.wait()
+		answer2 = Tex(r"$+\hat{\jmath}$").next_to(answer, RIGHT)
+		self.play(Write(answer2))
+		self.remove(j_box)
+		self.wait()
+
+class Matrices(Scene):
+	def construct(self):
+		title = Title("Matrices")
+		self.play(Write(title))
+		definition = Text("A matrix is a rectangular array of numbers.", t2c = {' matri': RED}).move_to(UP)
+		self.play(Write(definition))
+		self.wait()
+		description = Text("It can be composed of vectors or, possibly, scalars").next_to(definition, DOWN)
+		self.play(Write(description))
+		self.wait()
+
+		m = Matrix([
+			[8,6,7,5],
+			[3,0,9,-2],
+			[0,1,-10,7]
+			]).next_to(description, DOWN)
+		m_lbl = Tex(r"$A=$").next_to(m, LEFT)
+		matrix_example = VGroup(m_lbl, m)
+		self.play(Write(matrix_example))
+		self.wait()
+		self.remove(title, definition, description)
+		self.play(matrix_example.animate.shift(3*UP))
+		self.wait()
+		elements_def = Tex(r"Each of the values in a matrix are called ", r"elements.").next_to(matrix_example, DOWN)
+		elements_def.set_color_by_tex('lement',ORANGE)
+		self.play(Write(elements_def))
+		self.wait()
+		element_example = Tex(r"$a_{12}=6$").next_to(elements_def, 2*DOWN)
+		self.play(Write(element_example))
+		self.wait()
+		self.remove(matrix_example, elements_def, element_example)
+
+		vec_matrix1 = Tex(r"We can think of a matrix as ")
+		vec_matrix2 = Tex(r"several vectors in the coordinate plane.").next_to(vec_matrix1, DOWN)
+		vec_matrix = VGroup(vec_matrix1, vec_matrix2)
+		self.play(Write(vec_matrix))
+		self.wait()
+		self.remove(vec_matrix)
+
+		a = Tex(r"$\begin{bmatrix} 3 & -1 & -5 \\ 2 & -4 & 3 \end{bmatrix}$").to_edge(RIGHT)
+		plane = NumberPlane(x_range=[-5,4,1], y_range=[-5,4,1]).add_coordinates().to_edge(LEFT)
+		self.play(Create(plane))
+		self.wait()
+		self.play(Write(a))
+		self.wait()
+		vec1x = a[0][1]
+		vec1y = a[0][6]
+		vec1 = VGroup(vec1x, vec1y)
+		box1 = SurroundingRectangle(vec1)
+		self.play(Create(box1))
+		self.wait()
+		vec1_draw = Line(plane.c2p(0,0), plane.c2p(3,2), color=YELLOW).add_tip()
+		self.play(Create(vec1_draw))
+		self.remove(box1)
+		self.wait()
+		vec2x = a[0][2:4]
+		vec2y = a[0][7:9]
+		vec2 = VGroup(vec2x, vec2y)
+		box2 = SurroundingRectangle(vec2, color=BLUE)
+		self.play(Create(box2))
+		self.wait()
+		vec2_draw = Line(plane.c2p(0,0), plane.c2p(-1,-4), color=BLUE).add_tip()
+		self.play(Create(vec2_draw))
+		self.remove(box2)
+		self.wait()
+		vec3x = a[0][4:6]
+		vec3y = a[0][9]
+		vec3 = VGroup(vec3x, vec3y)
+		box3 = SurroundingRectangle(vec3, color=ORANGE)
+		self.play(Create(box3))
+		self.wait()
+		vec3_draw = Line(plane.c2p(0,0), plane.c2p(-5,3), color=ORANGE).add_tip()
+		self.play(Create(vec3_draw))
+		self.remove(box3)
+		self.wait()
+
+
+
+
 
 
 
