@@ -305,6 +305,100 @@ class Matrices(Scene):
 		self.play(Create(vec3_draw))
 		self.remove(box3)
 		self.wait()
+		self.remove(a, plane, vec1_draw, vec2_draw, vec3_draw)
+		self.wait()
+
+class MatrixAddition(Scene):
+	def construct(self):
+		intro_text1 = Tex(r"We can add or subtract two matrices")
+		intro_text2 = Tex(r"as long as the have the same dimensions.").next_to(intro_text1, DOWN)
+		intro_text = VGroup(intro_text1, intro_text2)
+		self.play(Write(intro_text))
+		self.wait()
+		self.remove(intro_text)
+
+		plane = NumberPlane(x_range=[-4,4,1], y_range=[-4,4,1],
+			x_length = 8, y_length = 5).add_coordinates().to_edge(DOWN)
+		a = Tex(r"$A = \begin{bmatrix} -2 & 3 \\ 0 & 4 \end{bmatrix}$").to_edge(UP)
+		b = Tex(r"$B = \begin{bmatrix} 4 & -3 \\ -2 & -1 \end{bmatrix}$").next_to(a, RIGHT)
+		matrix_group = VGroup(a, b)
+		self.play(Create(plane))
+		self.play(Write(matrix_group))
+		aPlusb = Tex(r"$A + B = $", r"$\begin{bmatrix} -2 & 3 \\ 0 & 4 \end{bmatrix}$", r"$+$", 
+			r"$\begin{bmatrix} 4 & -3 \\ -2 & -1 \end{bmatrix}$").to_edge(UP)
+		self.wait()
+		self.play(Transform(matrix_group, aPlusb))
+		self.wait()
+
+		sum_ax1 = aPlusb[1][1:3]
+		sum_ay1 = aPlusb[1][4]
+		sum1 = VGroup(sum_ax1, sum_ay1) 
+		ai_box = SurroundingRectangle(sum1)
+		self.play(Create(ai_box))
+		self.wait()
+
+		a_i = Line(start=plane.c2p(0,0), end=plane.c2p(-2,0), color=YELLOW).add_tip()
+		self.play(Create(a_i))
+		self.remove(ai_box)
+		self.wait()
+
+		sum_bx1 = aPlusb[3][1]
+		sum_by1 = aPlusb[3][4:6]
+		sum2 = VGroup(sum_bx1, sum_by1)
+		bi_box = SurroundingRectangle(sum2, color=BLUE)
+		self.play(Create(bi_box))
+		self.wait()
+
+		b_i = Line(start=plane.c2p(0,0), end=plane.c2p(4,-2), color=BLUE).add_tip()
+		self.play(Create(b_i))
+		self.remove(bi_box)
+		i_resultant = Line(start=plane.c2p(-2,0), end=plane.c2p(2,-2), color=WHITE).add_tip()
+		self.wait()
+		self.play(Transform(b_i, i_resultant))
+		self.wait()
+		self.remove(a_i)
+		self.wait()
+		answer = Tex(r"$=\begin{bmatrix} 2 &  \\ -2 & \end{bmatrix}$").next_to(aPlusb, RIGHT)
+		self.play(Write(answer))
+		self.wait()
+		self.remove(b_i)
+		self.wait()
+
+		sum_ax2 = aPlusb[1][3]
+		sum_ay2 = aPlusb[1][5]
+		sum3 = VGroup(sum_ax2, sum_ay2)
+		aj_box = SurroundingRectangle(sum3)
+		self.play(Create(aj_box))
+		self.wait()
+		a_j = Line(start=plane.c2p(0,0), end=plane.c2p(3,4), color=YELLOW).add_tip()
+		self.play(Create(a_j))
+		self.remove(aj_box)
+		self.wait()
+
+		sum_bx2 = aPlusb[3][2:4]
+		sum_by2 = aPlusb[3][6:8]
+		sum4 = VGroup(sum_bx2, sum_by2)
+		bj_box = SurroundingRectangle(sum4, color=BLUE)
+		self.play(Create(bj_box))
+		self.wait()
+		b_j = Line(start=plane.c2p(0,0), end=plane.c2p(-3,-1), color=BLUE).add_tip()
+		self.play(Create(b_j))
+		self.remove(bj_box)
+		j_resultant = Line(start=plane.c2p(3,4), end=plane.c2p(0,3), color=WHITE).add_tip()
+		self.wait()
+		self.play(Transform(b_j, j_resultant))
+		self.wait()
+		self.remove(a_j)
+		self.wait()
+		final_answer = Tex(r"$=\begin{bmatrix} 2 & 0 \\ -2 & 3 \end{bmatrix}$").next_to(aPlusb, RIGHT)
+		self.play(Transform(answer, final_answer))
+		self.wait()
+		self.remove(b_j)
+		self.wait()
+		self.remove(plane, aPlusb, final_answer)
+		self.wait()
+
+
 
 
 
