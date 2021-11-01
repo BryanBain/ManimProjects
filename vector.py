@@ -398,6 +398,63 @@ class MatrixAddition(Scene):
 		self.remove(plane, aPlusb, final_answer)
 		self.wait()
 
+		# aMinusb = Tex(r"$A - B =$", r"$\begin{bmatrix} -2 & 3 \\ 0 & 4 \end{bmatrix}$", r"$-$",
+		# 	r"$\begin{bmatrix} 4 & -3 \\ -2 & -1 \end{bmatrix}$")
+
+class ScalarMult(Scene):
+	def construct(self):
+		intro = Tex(r"When multiplying a matrix by a scalar,")
+		intro2 = Tex(r"multiply each element by the scalar.").next_to(intro, DOWN)
+		intro_text = VGroup(intro, intro2)
+		self.play(Write(intro_text))
+		self.wait()
+		self.remove(intro_text)
+
+		d = Tex(r"$D = \begin{bmatrix} -2 & 3 \\ 0 & 2 \end{bmatrix}$").to_edge(UR, buff=0.5)
+		plane = NumberPlane(x_range = [-5,7,1], y_range = [-4,7,1],
+			x_length = 8, y_length = 6).add_coordinates().to_edge(LEFT).scale(1.25)
+		self.play(Write(d))
+		self.play(Create(plane))
+		self.wait()
+		d_i1 = d[0][3:5]
+		d_i2 = d[0][6]
+		i_group = VGroup(d_i1, d_i2)
+		i_box = SurroundingRectangle(i_group)
+		self.play(Create(i_box))
+		self.wait()
+		double_d1 = Tex(r"$2D = \begin{bmatrix} -4 & \\ 0 & \end{bmatrix}$").next_to(d, 1.5*DOWN)
+		self.play(Write(double_d1))
+		self.wait()
+		self.remove(i_box)
+		di_vector = Line(start=plane.c2p(0,0), end=plane.c2p(-2,0), color=YELLOW).add_tip()
+		self.play(Create(di_vector))
+		self.wait()
+		d_j1 = d[0][5]
+		d_j2 = d[0][-2]
+		j_group = VGroup(d_j1, d_j2)
+		j_box = SurroundingRectangle(j_group, color=BLUE)
+		self.play(Create(j_box))
+		self.wait()
+		double_d2 = Tex(r"$2D = \begin{bmatrix} -4 & 6 \\ 0 & 4 \end{bmatrix}$").next_to(d, 1.5*DOWN)
+		self.play(Transform(double_d1, double_d2))
+		self.wait()
+		self.remove(j_box)
+		dj_vector = Line(start=plane.c2p(0,0), end=plane.c2p(3,2), color=BLUE).add_tip()
+		self.play(Create(dj_vector))
+		self.wait()
+		self.remove(double_d1)
+		self.wait()
+
+		negative_d = Tex(r"$-1D =$", r"$\begin{bmatrix} 2 & -3 \\ 0 & -2 \end{bmatrix}$").next_to(d, 1.5*DOWN)
+		negative_d_before = VGroup(negative_d[0], negative_d[1][0], negative_d[1][-1])
+		self.play(Write(negative_d_before))
+		self.wait()
+		self.play(Write(negative_d[1][1]))
+		self.wait()
+		self.play(Write(negative_d[1][4]))
+		self.wait()
+
+
 
 
 
