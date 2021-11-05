@@ -2,13 +2,41 @@ from manim import *
 
 class IntroVectors(Scene):
 	def construct(self):
-		plane = NumberPlane(x_range=(-2,5), y_range=(-2,5)).to_edge(LEFT)
-		self.add(plane)
-		intro_vec = plane.get_vector([3,4], color=YELLOW)
-		self.play(Create(intro_vec))
+		title = Title("Vectors")
+		self.play(Write(title))
+		definition1 = Tex(r"A ", r"vector ", r"can be throught of as")
+		definition1[1].set_color(RED)
+		definition2 = Tex(r"a line segment with direction.").next_to(definition1, DOWN)
+		definition = VGroup(definition1, definition2)
+		self.play(Write(definition))
+		self.wait()
+		self.play(Uncreate(title))
+		self.play(Uncreate(definition))
+		placement1 = Tex(r"We can start a vector anywhere,")
+		placement2 = Tex(r"but we usually draw it from the origin.").next_to(placement1, DOWN)
+		placement = VGroup(placement1, placement2).shift(2*UP)
+		self.play(Write(placement))
+		self.wait()
+		self.play(Uncreate(placement))
+		example = Tex(r"For instance, suppose we want to graph")
+		self.play(Write(example))
 		v = Matrix([[3],[4]])
 		vec_tex = Tex(r"$\vec{v} = $").next_to(v, LEFT)
-		vec1 = VGroup(vec_tex, v).shift(2*RIGHT + 2*UP)
+		vec1 = VGroup(vec_tex, v).next_to(v, DOWN)
+		self.play(Write(vec1))
+		self.wait()
+		self.remove(example, vec1)
+		self.wait()
+
+
+		plane = NumberPlane(x_range=(-2,5), y_range=(-2,5)).add_coordinates().to_edge(LEFT)
+		self.play(Create(plane))
+		self.wait(3)
+		intro_vec = plane.get_vector([3,4], color=YELLOW)
+		self.play(Create(intro_vec, run_time=2))
+		v = Matrix([[3],[4]])
+		vec_tex = Tex(r"$\vec{v} = $").next_to(v, LEFT)
+		vec1.to_edge(UP+RIGHT, buff=1).set_color(YELLOW)
 		self.play(Write(vec1))
 
 class VectorAddition(VectorScene):
@@ -42,17 +70,26 @@ class VectorAddition(VectorScene):
 
 		self.remove(title, vec_group, addition, vec_group2, resultant, equals)
 
-		plane = NumberPlane(x_range = (-2,6), y_range=(-4,5)).to_edge(LEFT)
+		plane = NumberPlane(x_range = (-2,6), y_range=(-4,5)).add_coordinates().to_edge(LEFT)
 		self.add(plane)
+		vec_v.set_color(YELLOW).to_edge(UR, buff=0.5)
+		self.play(Write(vec_v))
+		self.wait()
 		v_vector = Arrow(plane.c2p(0,0), plane.c2p(3,4), buff=0, color=YELLOW)
 		self.play(Create(v_vector))
+		vec_w.set_color(BLUE).next_to(vec_v, DOWN)
+		self.play(Write(vec_w))
+		self.wait()
 		w_vector = Arrow(plane.c2p(0,0), plane.c2p(2,-3), buff=0, color=BLUE)
 		self.play(Create(w_vector))
 		self.play(w_vector.animate.shift(3*RIGHT, 4*UP))
 		resultant_vec = Arrow(plane.c2p(0,0), plane.c2p(5,1), buff=0 , color=ORANGE)
 		self.play(Create(resultant_vec))
-		resultant_tex = Tex(r"$\vec{v}+\vec{w}$", color=ORANGE).next_to(resultant_vec)
+		resultant.set_color(ORANGE).next_to(vec_w, DOWN)
+		resultant_tex = Tex(r"$\vec{v}+\vec{w}=$", color=ORANGE).next_to(resultant, LEFT)
 		self.play(Write(resultant_tex))
+		self.play(Write(resultant))
+		self.wait()
 
 class VectorScaling(Scene):
 	def construct(self):
@@ -167,7 +204,7 @@ class VectorScaling(Scene):
 class BasisVectors(VectorScene):
 	def construct(self):
 		basis_text = Tex(r"Two important vectors are")
-		basis_text2 = Tex(r"$\hat{i} = \begin{bmatrix} 1 \\ 0 \end{bmatrix}$ and $\hat{j} = \begin{bmatrix} 0 \\ 1 \end{bmatrix}$").next_to(basis_text, DOWN)
+		basis_text2 = Tex(r"$\hat{\imath} = \begin{bmatrix} 1 \\ 0 \end{bmatrix}$ and $\hat{\jmath} = \begin{bmatrix} 0 \\ 1 \end{bmatrix}$").next_to(basis_text, DOWN)
 		basis_text_group = VGroup(basis_text, basis_text2)
 		self.play(Write(basis_text_group))
 		self.wait()
@@ -202,7 +239,7 @@ class BasisVectors(VectorScene):
 		self.wait()
 		v_coords = self.vector_to_coords(v)
 		self.wait()
-		v_lbl = Tex(r"$3\hat{\imath} + 2\hat{\jmath}$", color=YELLOW).move_to(4*RIGHT + 2*UP)
+		v_lbl = Tex(r"$3\hat{\imath} + 2\hat{\jmath}$", color=YELLOW).move_to(RIGHT + 1.5*UP)
 		self.wait()
 		self.play(Write(v_lbl))
 		self.wait()
@@ -390,90 +427,6 @@ class MatrixAddition(Scene):
 		self.remove(j_answer, a_j, b_j)
 		self.wait()
 
-
-		"""
-		a = Tex(r"$A = \begin{bmatrix} -2 & 3 \\ 0 & 4 \end{bmatrix}$").to_edge(UP)
-		b = Tex(r"$B = \begin{bmatrix} 4 & -3 \\ -2 & -1 \end{bmatrix}$").next_to(a, RIGHT)
-		matrix_group = VGroup(a, b)
-		self.play(Create(plane))
-		self.play(Write(matrix_group))
-		aPlusb = Tex(r"$A + B = $", r"$\begin{bmatrix} -2 & 3 \\ 0 & 4 \end{bmatrix}$", r"$+$", 
-			r"$\begin{bmatrix} 4 & -3 \\ -2 & -1 \end{bmatrix}$").to_edge(UP)
-		self.wait()
-		self.play(Transform(matrix_group, aPlusb))
-		self.wait()
-
-		sum_ax1 = aPlusb[1][1:3]
-		sum_ay1 = aPlusb[1][4]
-		sum1 = VGroup(sum_ax1, sum_ay1) 
-		ai_box = SurroundingRectangle(sum1)
-		self.play(Create(ai_box))
-		self.wait()
-
-		a_i = Line(start=plane.c2p(0,0), end=plane.c2p(-2,0), color=YELLOW).add_tip()
-		self.play(Create(a_i))
-		self.remove(ai_box)
-		self.wait()
-
-		sum_bx1 = aPlusb[3][1]
-		sum_by1 = aPlusb[3][4:6]
-		sum2 = VGroup(sum_bx1, sum_by1)
-		bi_box = SurroundingRectangle(sum2, color=BLUE)
-		self.play(Create(bi_box))
-		self.wait()
-
-		b_i = Line(start=plane.c2p(0,0), end=plane.c2p(4,-2), color=BLUE).add_tip()
-		self.play(Create(b_i))
-		self.remove(bi_box)
-		i_resultant = Line(start=plane.c2p(-2,0), end=plane.c2p(2,-2), color=WHITE).add_tip()
-		self.wait()
-		self.play(Transform(b_i, i_resultant))
-		self.wait()
-		self.remove(a_i)
-		self.wait()
-		answer = Tex(r"$=\begin{bmatrix} 2 &  \\ -2 &  \end{bmatrix}$").next_to(aPlusb, RIGHT)
-		self.play(Write(answer))
-		self.wait()
-		self.remove(b_i)
-		self.wait()
-
-		sum_ax2 = aPlusb[1][3]
-		sum_ay2 = aPlusb[1][5]
-		sum3 = VGroup(sum_ax2, sum_ay2)
-		aj_box = SurroundingRectangle(sum3)
-		self.play(Create(aj_box))
-		self.wait()
-		a_j = Line(start=plane.c2p(0,0), end=plane.c2p(3,4), color=YELLOW).add_tip()
-		self.play(Create(a_j))
-		self.remove(aj_box)
-		self.wait()
-
-		sum_bx2 = aPlusb[3][2:4]
-		sum_by2 = aPlusb[3][6:8]
-		sum4 = VGroup(sum_bx2, sum_by2)
-		bj_box = SurroundingRectangle(sum4, color=BLUE)
-		self.play(Create(bj_box))
-		self.wait()
-		b_j = Line(start=plane.c2p(0,0), end=plane.c2p(-3,-1), color=BLUE).add_tip()
-		self.play(Create(b_j))
-		self.remove(bj_box)
-		j_resultant = Line(start=plane.c2p(3,4), end=plane.c2p(0,3), color=WHITE).add_tip()
-		self.wait()
-		self.play(Transform(b_j, j_resultant))
-		self.wait()
-		self.remove(a_j)
-		self.wait()
-		final_answer = Tex(r"$=\begin{bmatrix} 2 & 0 \\ -2 & 3 \end{bmatrix}$").next_to(aPlusb, RIGHT)
-		self.play(Transform(answer, final_answer))
-		self.wait()
-		self.remove(b_j)
-		self.wait()
-		"""
-		# self.remove(plane, aPlusb, final_answer)
-		# self.wait()
-
-		# aMinusb = Tex(r"$A - B =$", r"$\begin{bmatrix} -2 & 3 \\ 0 & 4 \end{bmatrix}$", r"$-$",
-		# 	r"$\begin{bmatrix} 4 & -3 \\ -2 & -1 \end{bmatrix}$")
 
 class ScalarMult(Scene):
 	def construct(self):
