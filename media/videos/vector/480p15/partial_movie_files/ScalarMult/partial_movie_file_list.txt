@@ -32,5 +32,3 @@ file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/ve
 file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/vector/480p15/partial_movie_files/ScalarMult/2201830969_398514950_3832363290.mp4'
 file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/vector/480p15/partial_movie_files/ScalarMult/2201830969_440696054_2678323563.mp4'
 file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/vector/480p15/partial_movie_files/ScalarMult/2201830969_398514950_304985518.mp4'
-file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/vector/480p15/partial_movie_files/ScalarMult/2201830969_3001508871_974027953.mp4'
-file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/vector/480p15/partial_movie_files/ScalarMult/2201830969_398514950_4122178438.mp4'
