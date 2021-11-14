@@ -4,12 +4,13 @@ class IntroVectors(Scene):
 	def construct(self):
 		title = Title("Vectors")
 		self.play(Write(title))
-		definition1 = Tex(r"A ", r"vector ", r"can be throught of as")
+		self.wait()
+		definition1 = Tex(r"A ", r"vector ", r"can be thought of as")
 		definition1[1].set_color(RED)
 		definition2 = Tex(r"a line segment with direction.").next_to(definition1, DOWN)
 		definition = VGroup(definition1, definition2)
 		self.play(Write(definition, run_time=2))
-		self.wait(2)
+		self.wait()
 		self.play(Uncreate(title))
 		self.play(Uncreate(definition))
 
@@ -39,7 +40,7 @@ class IntroVectors(Scene):
 		vec_tex = Tex(r"$\vec{v} = $").next_to(v, LEFT)
 		vec1 = VGroup(vec_tex, v).next_to(v, DOWN)
 		self.play(Write(vec1))
-		self.wait(3)
+		self.wait(2)
 		v_x_box = SurroundingRectangle(v[0][0])
 		v_y_box = SurroundingRectangle(v[0][1])
 		self.play(Create(v_x_box))
@@ -69,6 +70,7 @@ class VectorAddition(VectorScene):
 	def construct(self):
 		title = Title("Adding Vectors")
 		self.play(Write(title))
+		self.wait(2)
 
 		v = Matrix([[3],[4]])
 		v_tex = Tex(r"$\vec{v} = $").next_to(v, LEFT)
@@ -78,7 +80,7 @@ class VectorAddition(VectorScene):
 		vec_w = VGroup(w_tex, w).next_to(vec_v, 2*RIGHT)
 		vec_group = VGroup(vec_v, vec_w)
 		self.play(Write(vec_group))
-		self.wait()
+		self.wait(2)
 		self.play(vec_group.animate.shift(1.5*UP))
 		self.wait()
 
@@ -94,6 +96,7 @@ class VectorAddition(VectorScene):
 		self.play(Write(equals))
 		resultant = Matrix([[5],[1]]).next_to(equals,RIGHT)
 		self.play(Write(resultant))
+		self.wait(3)
 
 		self.remove(title, vec_group, addition, vec_group2, resultant, equals)
 		self.wait()
@@ -102,12 +105,12 @@ class VectorAddition(VectorScene):
 		self.add(plane)
 		vec_v.set_color(YELLOW).to_edge(UR, buff=0.5)
 		self.play(Write(vec_v))
-		self.wait()
+		self.wait(3)
 		v_vector = Arrow(plane.c2p(0,0), plane.c2p(3,4), buff=0, color=YELLOW)
 		self.play(Create(v_vector))
 		vec_w.set_color(BLUE).next_to(vec_v, DOWN)
 		self.play(Write(vec_w))
-		self.wait()
+		self.wait(2)
 		w_vector = Arrow(plane.c2p(0,0), plane.c2p(2,-3), buff=0, color=BLUE)
 		self.play(Create(w_vector))
 		self.wait(2)
@@ -118,7 +121,7 @@ class VectorAddition(VectorScene):
 		resultant_tex = Tex(r"$\vec{v}+\vec{w}=$", color=ORANGE).next_to(resultant, LEFT)
 		self.play(Write(resultant_tex))
 		self.play(Write(resultant))
-		self.wait()
+		self.wait(2)
 
 class VectorScaling(Scene):
 	def construct(self):
@@ -133,7 +136,7 @@ class VectorScaling(Scene):
 		scalar_explanation2 = Tex("we multiply both coordinate values by the scalar.").next_to(scalar_explanation, DOWN)
 		scalar_group = VGroup(scalar_explanation, scalar_explanation2)
 		self.play(Write(scalar_group))
-		self.wait()
+		self.wait(3)
 		self.remove(scalar_group)
 
 		plane = NumberPlane(x_range=[-1,7,1], y_range=[-6,3,1], 
@@ -155,7 +158,7 @@ class VectorScaling(Scene):
 		self.play(Write(a_vec_lbl))
 		self.wait()
 		self.play(Transform(a_group, dbl_group, run_time=2))
-		self.wait()
+		self.wait(2)
 		self.remove(a_group, dbl_group, plane)
 		self.wait()
 
@@ -177,14 +180,14 @@ class VectorScaling(Scene):
 		self.play(Create(a_group))
 		self.wait()
 		self.play(Transform(a_group, neg_group))
-		self.wait(2)
+		self.wait(3)
 		self.remove(a_group, neg_group, plane2)
 		self.wait()
 
 		example_text = Tex(r"Given $\vec{v}=\begin{bmatrix} 1 \\ -1 \end{bmatrix}$ and "
 			r"$\vec{w}=\begin{bmatrix} -2 \\ 0 \end{bmatrix}$, find $3\vec{v} + \vec{w}$")
 		self.play(Write(example_text))
-		self.wait()
+		self.wait(3)
 		self.remove(example_text)
 		self.wait()
 
@@ -290,16 +293,19 @@ class VectorScaling(Scene):
 
 class BasisVectors(VectorScene):
 	def construct(self):
+		title = Title("Basis vectors $\hat{\imath}$ and $\hat{\jmath}$")
+		self.play(Write(title))
+		self.wait()
 		basis_text = Tex(r"Two important vectors are")
 		basis_text2 = Tex(r"$\hat{\imath} = \begin{bmatrix} 1 \\ 0 \end{bmatrix}$ and $\hat{\jmath} = \begin{bmatrix} 0 \\ 1 \end{bmatrix}$").next_to(basis_text, DOWN)
 		basis_text_group = VGroup(basis_text, basis_text2)
 		self.play(Write(basis_text_group))
 		self.wait()
-		self.play(basis_text_group.animate.shift(3*UP))
+		self.play(basis_text_group.animate.shift(2*UP))
 		basis_text3 = Tex("These will serve as the basis for matrix multiplication.")
 		self.play(Write(basis_text3))
 		self.wait()
-		self.remove(basis_text_group, basis_text3)
+		self.remove(basis_text_group, basis_text3, title)
 
 		plane = self.add_plane(animate=True)
 		self.wait()
@@ -308,15 +314,15 @@ class BasisVectors(VectorScene):
 		self.wait()
 		self.play(Create(bases))
 		self.play(Create(bases_lbls))
-		self.wait()
+		self.wait(2)
 		self.remove(bases, bases_lbls, plane)
 		self.wait()
 
 		basis_combination = Tex(r"Any vector can be written as a combination of a scalar ")
 		basis_combination2 = Tex(r"and the basis vectors $\hat{\imath}$ and $\hat{\jmath}.$").next_to(basis_combination, DOWN)
 		basis_text = VGroup(basis_combination, basis_combination2)
-		self.play(Write(basis_text))
-		self.wait()
+		self.play(Write(basis_text, run_time=2))
+		self.wait(2)
 		self.remove(basis_text)
 		self.wait()
 
@@ -331,7 +337,7 @@ class BasisVectors(VectorScene):
 		self.play(Write(v_lbl))
 		self.wait()
 		self.remove(v, v_lbl, plane)
-		self.wait()
+		self.wait(2)
 
 		example = Tex("Example.", r"Write ", r"$\vec{w} = \begin{bmatrix} -3 \\ 1 \end{bmatrix}$", r" using the basis vectors $\hat{\imath}$ and $\hat{\jmath}$.",)
 		example.set_color_by_tex("xample", '#FE0000')
@@ -352,7 +358,7 @@ class BasisVectors(VectorScene):
 		answer2 = Tex(r"$+\hat{\jmath}$").next_to(answer, RIGHT)
 		self.play(Write(answer2))
 		self.remove(j_box)
-		self.wait()
+		self.wait(8)
 
 class Matrices(Scene):
 	def construct(self):
@@ -380,12 +386,12 @@ class Matrices(Scene):
 		elements_def = Tex(r"Each of the values in a matrix are called ", r"elements.").next_to(matrix_example, DOWN)
 		elements_def.set_color_by_tex('lement',ORANGE)
 		self.play(Write(elements_def))
-		self.wait()
+		self.wait(2)
 		a_12box = SurroundingRectangle(m[0][1])
 		self.play(Create(a_12box))
 		element_example = Tex(r"$a_{12}=6$").next_to(elements_def, 2*DOWN)
 		self.play(Write(element_example))
-		self.wait()
+		self.wait(2)
 		self.remove(matrix_example, elements_def, element_example, a_12box)
 
 		vec_matrix1 = Tex(r"We can think of a matrix as ")
@@ -430,8 +436,6 @@ class Matrices(Scene):
 		vec3_draw = Line(plane.c2p(0,0), plane.c2p(-5,3), color=ORANGE).add_tip()
 		self.play(Create(vec3_draw))
 		self.remove(box3)
-		self.wait()
-		self.remove(a, plane, vec1_draw, vec2_draw, vec3_draw)
 		self.wait()
 
 class MatrixAddition(Scene):
@@ -521,18 +525,21 @@ class MatrixAddition(Scene):
 
 class ScalarMult(Scene):
 	def construct(self):
+		title = Title("Scalar Multiplication for Matrices")
+		self.play(Write(title, run_time=2))
+		self.wait()
 		intro = Tex(r"When multiplying a matrix by a scalar,")
 		intro2 = Tex(r"multiply each element by the scalar.").next_to(intro, DOWN)
 		intro_text = VGroup(intro, intro2)
 		self.play(Write(intro_text))
 		self.wait(4)
-		self.remove(intro_text)
+		self.remove(intro_text, title)
 
 		d = Matrix([[-2, 3], [0, 2]]).to_edge(UR, buff=0.5)
 		d_lbl = Tex(r"$D = $").next_to(d, LEFT)
 		plane = NumberPlane(x_range = [-5,7,1], y_range = [-4,7,1],
 			x_length = 8, y_length = 6).add_coordinates().to_edge(LEFT).scale(1.25)
-		matrix_d = VGroup(d, d_lbl)
+		matrix_d = VGroup(d_lbl, d)
 		self.play(Write(matrix_d))
 		self.play(Create(plane))
 		self.wait()
@@ -551,8 +558,12 @@ class ScalarMult(Scene):
 
 		double_d = Matrix([[-4, 6], [0,4]]).next_to(d, 1.5*DOWN)
 		double_d_lbl = Tex(r"$2D = $").next_to(double_d, LEFT)
-		double_matrix = VGroup(double_d, double_d_lbl)
-		self.play(Write(double_matrix))
+		self.play(Write(double_d_lbl))
+		self.wait()
+		brackets = double_d.get_brackets()
+		double_di = VGroup(double_d.get_columns()[0])
+		self.play(Write(brackets))
+		self.play(Write(double_di))
 		self.wait()
 		self.remove(i_box)
 		double_di_vector = Line(start=plane.c2p(0,0), end=plane.c2p(-4,0), color=YELLOW).add_tip()
@@ -561,11 +572,14 @@ class ScalarMult(Scene):
 		Transform(double_di_vector, di_vector)
 		
 		self.remove(j_box)
+		double_dj = VGroup(double_d.get_columns()[1])
+		self.play(Write(double_dj))
 		double_dj_vector = Line(start=plane.c2p(0,0), end=plane.c2p(6,4), color=BLUE).add_tip()
 		self.play(Transform(dj_vector, double_dj_vector))
 		self.wait()
 		
-		self.remove(di_vector, dj_vector, double_dj_vector, double_matrix)
+		self.remove(di_vector, dj_vector, double_dj_vector, double_d, 
+		double_d_lbl, double_di, double_dj, brackets)
 		self.wait()
 
 		di_vector = Line(start=plane.c2p(0,0), end=plane.c2p(-2,0), color=YELLOW).add_tip()
@@ -576,12 +590,16 @@ class ScalarMult(Scene):
 
 		negative_d = Matrix([[2,-3], [0,-2]]).next_to(d, 1.5*DOWN)
 		negative_d_lbl = Tex(r"$-1D = $").next_to(negative_d, LEFT)
-		negative_matrix = VGroup(negative_d, negative_d_lbl)
-		self.play(Write(negative_matrix))
+		self.play(Write(negative_d_lbl))
+		brackets = negative_d.get_brackets()
+		self.play(Write(brackets))
 		self.wait()
 
 		i_box = SurroundingRectangle(d.get_columns()[0])
 		self.play(Create(i_box))
+		self.wait()
+		negative_di = VGroup(negative_d.get_columns()[0])
+		self.play(Write(negative_di))
 		self.wait()
 		neg_di_vector = Line(start=plane.c2p(0,0), end=plane.c2p(2,0), color=YELLOW).add_tip()
 		self.play(Transform(di_vector, neg_di_vector))
@@ -590,14 +608,12 @@ class ScalarMult(Scene):
 		j_box = SurroundingRectangle(d.get_columns()[1], color=BLUE)
 		self.play(Create(j_box))
 		self.wait()
+		negative_dj = VGroup(negative_d.get_columns()[1])
+		self.play(Write(negative_dj))
 		neg_dj_vector = Line(start=plane.c2p(0,0), end=plane.c2p(-3,-2), color=BLUE).add_tip()
 		self.play(Transform(dj_vector, neg_dj_vector))
 		self.remove(j_box)
-		self.wait()
-
-		# neg_d_UL = negative_d.get_entries()[0].to_edge(RIGHT + DOWN)
-		# self.play(Write(neg_d_UL))
-		# self.wait()
+		self.wait(3)
 
 
 
