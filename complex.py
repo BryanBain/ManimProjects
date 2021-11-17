@@ -1,4 +1,5 @@
 from manim import *
+import math
 
 class Complex(Scene):
     def construct(self):
@@ -207,7 +208,7 @@ class MultVecs(Scene):
     self.play(Uncreate(complex_example))
     self.wait()
 
-    plane = ComplexPlane(x_range = [0,7,1], y_range = [0,11,1],
+    plane = ComplexPlane(x_range = [0,11,1], y_range = [0,11,1],
                          x_length = 8, y_length=8).add_coordinates().to_edge(LEFT).scale(0.95)
     self.play(Create(plane))
     self.wait()
@@ -293,9 +294,10 @@ class MultVecs(Scene):
     x_axis = Line(plane.c2p(0,0), plane.c2p(5,0))
     vec1_angle = Angle(x_axis, vec1, radius=1.5)
     self.play(Create(vec1_angle))
-    value = Integer(vec1_angle.get_value(degrees=True), unit="^{\circ}", color=YELLOW)
+    value = DecimalNumber(vec1_angle.get_value(degrees=True), unit="^{\circ}", color=YELLOW)
     self.play(Write(value.next_to(vec1_angle, RIGHT ,buff=0.5)))
     self.wait()
+    self.play(Write(value.next_to(answer_mag_text, DOWN)))
     self.play(Uncreate(vec1_angle))
     self.play(Uncreate(value))
     self.play(Uncreate(vec1))
@@ -305,7 +307,7 @@ class MultVecs(Scene):
     self.wait()
     vec2_angle = Angle(x_axis, vec2, radius=1.5)
     self.play(Create(vec2_angle))
-    value2 = Integer(vec2_angle.get_value(degrees=True), unit="^{\circ}", color=BLUE)
+    value2 = DecimalNumber(vec2_angle.get_value(degrees=True), unit="^{\circ}", color=BLUE)
     self.play(Write(value2.next_to(vec2_angle, RIGHT ,buff=0.25)))
     self.wait()
     self.play(Uncreate(vec2))
@@ -317,7 +319,7 @@ class MultVecs(Scene):
     self.wait()
     answer_vec_angle = Angle(x_axis, answer_vec, radius=1.5)
     self.play(Create(answer_vec_angle))
-    value3 = Integer(answer_vec_angle.get_value(degrees=True), unit="^{\circ}", color=RED)
+    value3 = DecimalNumber(answer_vec_angle.get_value(degrees=True), unit="^{\circ}", color=RED)
     self.play(Write(value3.next_to(answer_vec_angle, RIGHT ,buff=0.25)))
     self.wait()
     self.play(Uncreate(answer_vec))
