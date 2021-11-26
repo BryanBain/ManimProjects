@@ -38,5 +38,5 @@ file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/co
 file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/complex_trig/480p15/partial_movie_files/ComplexTrig/2201830969_398514950_1923436121.mp4'
 file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/complex_trig/480p15/partial_movie_files/ComplexTrig/2201830969_1408237274_841044888.mp4'
 file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/complex_trig/480p15/partial_movie_files/ComplexTrig/2201830969_398514950_402109138.mp4'
-file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/complex_trig/480p15/partial_movie_files/ComplexTrig/2201830969_998928416_129555801.mp4'
-file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/complex_trig/480p15/partial_movie_files/ComplexTrig/2201830969_398514950_2382212214.mp4'
+file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/complex_trig/480p15/partial_movie_files/ComplexTrig/2201830969_2007209886_4121234160.mp4'
+file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/complex_trig/480p15/partial_movie_files/ComplexTrig/2201830969_398514950_1148395909.mp4'

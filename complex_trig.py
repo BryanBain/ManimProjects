@@ -76,6 +76,51 @@ class ComplexTrig(Scene):
         self.wait()
         self.remove(sine, polar_y)
 
-        new_r = Tex(r"$x\cos(\theta) + iy\sin(\theta)$", color=YELLOW).next_to(hypot_brace)
-        self.play(ReplacementTransform(hypot_txt, new_r))
+        new_r = Tex(r"$r = x\cos(\theta) + iy\sin(\theta)$", color=YELLOW).move_to(2*UP)
+        self.play(ReplacementTransform(complex_resultant, new_r))
+        self.wait()
+
+class ComplexMult(Scene):
+    def construct(self):
+        intro = Tex("Recall that when multiplying complex numbers, "
+            "we drew vectors (arrows) to the points in the complex plane.").scale(0.8)
+        self.play(Write(intro))
+        self.wait()
+        intro2 = Tex("We multiplied the length of each vector and added the rotated angles for each number.").scale(0.8)
+        self.play(Uncreate(intro))
+        self.play(Write(intro2))
+        self.wait()
+        self.play(Uncreate(intro2))
+        intro3 = Tex("For simplicity, we will look at complex numbers on the unit circle.").scale(0.9)
+        self.play(Write(intro3))
+        self.wait()
+        self.play(Uncreate(intro3))
+
+        example = Tex("Example. ", "Multiply ", r"$\left(\frac{\sqrt{3}}{2} + \frac{1}{2}i\right)$",
+                    r"$\left(-\frac{1}{2} + \frac{\sqrt{3}}{2}i\right)$")
+        example[0].set_color(RED)
+        self.play(Write(example))
+        self.wait()
+        self.remove(example)
+
+        axes = Axes(x_range = [-1,1,0.25], y_range=[-1,1,0.25], x_length = 8, y_length=8).add_coordinates()
+        self.play(Create(axes))
+        self.wait()
+        unit_circle = Circle(radius = 4, color=YELLOW)
+        self.play(Create(unit_circle))
+        self.wait()
+        half_sqrt_3 = 0.866
+        point1 = Dot(axes.c2p(half_sqrt_3, 0.5))
+        point1_lbl = Tex(r"$\left(\frac{\sqrt{3}}{2} + \frac{1}{2}i\right)$").next_to(point1, RIGHT)
+        point1_grp = VGroup(point1, point1_lbl)
+        self.play(Write(point1_grp))
+        self.wait()
+        x_axis = Line(start=axes.c2p(0,0), end=axes.c2p(1,0))
+        vec1 = Line(start=axes.c2p(0,0), end=point1)
+        self.play(Create(vec1))
+        self.wait()
+        angle1 = Angle(x_axis, vec1, radius=1)
+        self.play(Create(angle1))
+        angle1_value = Integer(angle1.get_value(degrees=True), unit="^{\circ}").next_to(angle1, RIGHT)
+        self.play(Write(angle1_value))
         self.wait()
