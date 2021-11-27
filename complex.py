@@ -209,7 +209,7 @@ class MultVecs(Scene):
     self.wait()
 
     plane = ComplexPlane(x_range = [0,11,1], y_range = [0,11,1],
-                         x_length = 8, y_length=8).add_coordinates().to_edge(LEFT).scale(0.95)
+                         x_length = 8, y_length=8).add_coordinates().to_edge(LEFT, buff=0.2).scale(0.95)
     self.play(Create(plane))
     self.wait()
     example = Tex(r"$4+3i$", r"$2+i$")
@@ -299,7 +299,6 @@ class MultVecs(Scene):
     self.wait()
     self.play(Write(value.next_to(answer_mag_text, DOWN)))
     self.play(Uncreate(vec1_angle))
-    self.play(Uncreate(value))
     self.play(Uncreate(vec1))
     self.wait()
 
@@ -310,9 +309,9 @@ class MultVecs(Scene):
     value2 = DecimalNumber(vec2_angle.get_value(degrees=True), unit="^{\circ}", color=BLUE)
     self.play(Write(value2.next_to(vec2_angle, RIGHT ,buff=0.25)))
     self.wait()
+    self.play(Write(value2.next_to(value, DOWN)))
     self.play(Uncreate(vec2))
     self.play(Uncreate(vec2_angle))
-    self.play(Uncreate(value2))
     self.wait()
 
     self.play(Create(answer_vec))
@@ -322,10 +321,21 @@ class MultVecs(Scene):
     value3 = DecimalNumber(answer_vec_angle.get_value(degrees=True), unit="^{\circ}", color=RED)
     self.play(Write(value3.next_to(answer_vec_angle, RIGHT ,buff=0.25)))
     self.wait()
+    self.play(Write(value3.next_to(value2, DOWN)))
     self.play(Uncreate(answer_vec))
     self.play(Uncreate(answer_vec_angle))
-    self.play(Uncreate(value3))
+    self.wait(2)
+
+    self.remove(vec1_mag_text, vec2_mag_text, answer_mag_text, plane, 
+                value, value2, value3)
     self.wait()
+
+    revelation = Tex("When multiplying complex numbers, \n"
+                    "we multiply the lengths of the vectors \n"
+                    "and add the angles they make with the positive $x$-axis.").scale(0.8)
+    self.play(Write(revelation))
+    self.wait()
+
 
 
 
