@@ -336,7 +336,68 @@ class MultVecs(Scene):
     self.play(Write(revelation))
     self.wait()
 
+class Conjugate(Scene):
+  def construct(self):
+    example = Tex(r"$(2+i)(2-i)$").to_edge(UP, buff=0.5)
+    self.play(Write(example))
+    self.wait()
 
+    plane = ComplexPlane(x_range = [-2,6,1], y_range=[-3,3,1]).add_coordinates().to_edge(DL, buff=0.5)
+    xaxis = Line(start=plane.c2p(0,0), end=plane.c2p(5,0))
+    self.play(Create(plane))
+    self.wait()
+    box1 = SurroundingRectangle(example[0][1:4])
+    self.play(Create(box1))
+    self.wait()
+    vec1 = Line(start=plane.c2p(0,0), end=plane.c2p(2,1), color=YELLOW).add_tip()
+    self.play(Create(vec1))
+    self.wait()
+    vec1_brace = BraceBetweenPoints(plane.c2p(2,1), plane.c2p(0,0), color=YELLOW)
+    vec1_mag = vec1_brace.get_text(r"$\sqrt{5}$", buff=0.1).set_color(YELLOW)
+    self.play(Create(vec1_brace))
+    self.play(Write(vec1_mag))
+    self.wait()
+    angle1 = Angle(xaxis, vec1, color=YELLOW)
+    angle1_measure = DecimalNumber(angle1.get_value(degrees=True), unit="^{\circ}", color=YELLOW).scale(0.8)
+    self.play(Write(angle1_measure.next_to(angle1, 2*RIGHT + 0.15*UP)))
+    self.wait()
+    vec1_grp = VGroup(box1, vec1, vec1_brace, vec1_mag, angle1_measure)
+    mag_and_angle = Tex(r"$\sqrt{5} \quad 26.57^\circ$").set_color(YELLOW).to_edge(RIGHT + 1.25*UP, buff=0.2)
+    self.play(Write(mag_and_angle))
+    self.play(Uncreate(vec1_grp))
+    self.wait()
+    box2 = SurroundingRectangle(example[0][6:9], color=BLUE)
+    self.play(Create(box2))
+    self.wait()
+    vec2 = Line(start=plane.c2p(0,0), end=plane.c2p(2,-1), color=BLUE).add_tip()
+    self.play(Create(vec2))
+    self.wait()
+    vec2_brace = BraceBetweenPoints(plane.c2p(2,-1), plane.c2p(0,0), color=BLUE)
+    vec2_mag = vec2_brace.get_text(r"$\sqrt{5}$", buff=0.1).set_color(BLUE)
+    self.play(Create(vec2_brace))
+    self.play(Write(vec2_mag))
+    self.wait()
+    angle2 = Angle(xaxis, vec2, color=BLUE)
+    self.play(Create(angle2))
+    angle2_measure = DecimalNumber(angle2.get_value(degrees=True), unit="^{\circ}", color=BLUE).scale(0.8)
+    self.play(Write(angle2_measure.next_to(angle2, UL, buff=0.1)))
+    self.wait()
+    vec2_grp = VGroup(box2, vec2, vec2_brace, vec2_mag, angle2, angle2_measure)
+    mag_and_angle2 = Tex(r"$\sqrt{5} \quad 333.43^\circ$").set_color(BLUE).next_to(mag_and_angle, DOWN)
+    self.play(Write(mag_and_angle2))
+    self.play(Uncreate(vec2_grp))
+    self.wait()
+
+    vec3 = Line(start=plane.c2p(0,0), end=plane.c2p(5,0), color=RED).add_tip()
+    vec3_mag_and_angle = Tex(r"$5 \quad 360^\circ$").set_color(RED).next_to(mag_and_angle2, DOWN)
+    self.play(Write(vec3_mag_and_angle))
+    self.wait()
+    self.play(Create(vec3))
+    self.wait()
+
+class DivideComplex(Scene):
+  def construct(self):
+    
 
 
     
