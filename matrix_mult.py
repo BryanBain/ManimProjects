@@ -26,4 +26,32 @@ class MatrixMultIntro(Scene):
         self.wait()
         self.play(explanation.animate.to_edge(UP))
         self.wait()
+        matrix_A = Matrix([[3,-2],[1,0]])
+        self.play(Write(matrix_A))
+        self.wait()
+        i_box = SurroundingRectangle(matrix_A.get_columns()[0], color=GREEN)
+        self.play(Create(i_box))
+        self.wait()
+        i_hat = Tex(r"$\hat\imath$").next_to(i_box, UP).set_color(GREEN)
+        self.play(Write(i_hat))
+        self.wait()
+        j_box = SurroundingRectangle(matrix_A.get_columns()[1], color=RED)
+        self.play(Create(j_box))
+        self.wait()
+        j_hat = Tex(r"$\hat\jmath$").next_to(j_box, UP).set_color(RED)
+        self.play(Write(j_hat))
+        self.wait()
+
+class LinearTransform(LinearTransformationScene):
+    def __init__(self):
+        LinearTransformationScene.__init__(
+            self,
+            show_coordinates=True,
+            leave_ghost_vectors=True,
+        )
+    def construct(self):
+        matrix_A = [[3,-2],[1,0]]
+        self.apply_matrix(matrix_A)
+        self.wait()
+
 
