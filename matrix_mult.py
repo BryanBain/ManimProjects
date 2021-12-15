@@ -50,11 +50,16 @@ class LinearTransform(LinearTransformationScene):
             leave_ghost_vectors=True,
         )
     def construct(self):
-        matrix_A = [[1,-2],[1,1]]
+        vec = self.add_vector([1,3])
+        self.write_vector_coordinates(vec)
+        self.wait()
+        matrix_A = [[1,-2],[1,0]]
         self.apply_matrix(matrix_A)
         self.wait()
-        matrix_B = [[1,1],[-1,1]]
-        self.apply_matrix(matrix_B)
+        self.write_vector_coordinates(vec)
         self.wait()
+        # matrix_B = [[1,1],[-1,1]]
+        # self.apply_matrix(matrix_B)
+        # self.wait()
 
 
