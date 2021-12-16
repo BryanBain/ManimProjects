@@ -46,8 +46,8 @@ class LinearTransform(LinearTransformationScene):
     def __init__(self):
         LinearTransformationScene.__init__(
             self,
-            show_coordinates=True,
-            leave_ghost_vectors=True,
+            # show_coordinates=True,
+            # leave_ghost_vectors=True,
         )
     def construct(self):
         vec = self.add_vector([1,3])
@@ -58,6 +58,29 @@ class LinearTransform(LinearTransformationScene):
         self.wait()
         self.write_vector_coordinates(vec)
         self.wait()
+        new_ihat = Line(start=(0,0,0), end=(1,1,0), color=GREEN).add_tip()
+        self.play(Create(new_ihat))
+        self.wait()
+        i_brace = BraceBetweenPoints((0,0,0), (1,1,0), color=GREEN)
+        self.play(Create(i_brace))
+        self.wait()
+        i_brace_txt = i_brace.get_text("$1\hat\imath$",buff=0.1).set_color(GREEN)
+        self.play(Write(i_brace_txt))
+        self.wait()
+        new_jhat1 = Line(start=(1,1,0), end=(-1,1,0), color=RED).add_tip()
+        self.play(Create(new_jhat1))
+        new_jhat2 = Line(start=(-1,1,0), end=(-3,1,0), color=RED).add_tip()
+        self.play(Create(new_jhat2))
+        new_jhat3 = Line(start=(-3,1,0), end=(-5,1,0), color=RED).add_tip()
+        self.play(Create(new_jhat3))
+        self.wait()
+        j_brace = BraceBetweenPoints((1,1,0), (-5,1,0), color=RED)
+        self.play(Create(j_brace))
+        self.wait()
+        j_brace_txt = j_brace.get_text("$3\hat\jmath$", buff=0.1).set_color(RED)
+        self.play(Write(j_brace_txt))
+        self.wait()
+        
         # matrix_B = [[1,1],[-1,1]]
         # self.apply_matrix(matrix_B)
         # self.wait()
