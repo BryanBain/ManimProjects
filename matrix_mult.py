@@ -109,7 +109,7 @@ class LinearTransform2(LinearTransformationScene):
         self.apply_matrix(matrix1)
         self.wait()
 
-class LinearTransformExample1a(LinearTransformationScene):
+class LinearTransformExample2a(LinearTransformationScene):
     def __init__(self):
         LinearTransformationScene.__init__(
         self,
@@ -130,7 +130,7 @@ class LinearTransformExample1a(LinearTransformationScene):
         self.play(Create(answer))
         self.wait()
 
-class LinearTransformExample1b(LinearTransformationScene):
+class LinearTransformExample2b(LinearTransformationScene):
     def __init__(self):
         LinearTransformationScene.__init__(
         self,
