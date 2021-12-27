@@ -1,0 +1,7 @@
+# This file is used internally by FFMPEG.
+file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/matrix_mult/480p15/partial_movie_files/LinearTransformExample1a/3163782288_2001929335_946444083.mp4'
+file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/matrix_mult/480p15/partial_movie_files/LinearTransformExample1a/2201830969_398514950_3167552827.mp4'
+file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/matrix_mult/480p15/partial_movie_files/LinearTransformExample1a/2201830969_2265218928_1852325331.mp4'
+file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/matrix_mult/480p15/partial_movie_files/LinearTransformExample1a/2201830969_398514950_1127219701.mp4'
+file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/matrix_mult/480p15/partial_movie_files/LinearTransformExample1a/2201830969_2815773169_606184698.mp4'
+file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/matrix_mult/480p15/partial_movie_files/LinearTransformExample1a/2201830969_398514950_3827798516.mp4'

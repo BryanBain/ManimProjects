@@ -1,4 +1,6 @@
 from manim import *
+# config.frame_width = 18
+# config.frame_height = 32
 
 class MatrixMultIntro(Scene):
     def construct(self):
@@ -53,6 +55,7 @@ class LinearTransform(LinearTransformationScene):
         vec = self.add_vector([1,3])
         self.write_vector_coordinates(vec)
         self.wait()
+        self.get_basis_vector_labels
         matrix_A = [[1,-2],[1,0]]
         self.apply_matrix(matrix_A)
         self.wait()
@@ -80,9 +83,72 @@ class LinearTransform(LinearTransformationScene):
         j_brace_txt = j_brace.get_text("$3\hat\jmath$", buff=0.1).set_color(RED)
         self.play(Write(j_brace_txt))
         self.wait()
-        
-        # matrix_B = [[1,1],[-1,1]]
-        # self.apply_matrix(matrix_B)
-        # self.wait()
+        matrix1_grp = VGroup(new_ihat, new_jhat1, new_jhat2, new_jhat3, i_brace,
+                            i_brace_txt, j_brace, j_brace_txt)
+        self.play(Uncreate(matrix1_grp))
+        self.wait()
+        self.remove(self.write_vector_coordinates(vec))
+        matrix_B = [[-1,1],[-1,-2]]
+        self.apply_matrix(matrix_B)
+        self.wait()
 
+class LinearTransform2(LinearTransformationScene):
+    def __init__(self):
+        LinearTransformationScene.__init__(
+            self, 
+            background_plane_kwargs={'x_range':(-9,9), 'y_range':(-9,9)},
+            foreground_plane_kwargs={'x_range':[-9,9], 'y_range':(-9,9)}
+            # show_coordinates=True,
+            # leave_ghost_vectors=True,
+        )
+    def construct(self):
+        matrix1 = [[2,1], [1,2]]
+        matrix2 = [[1,-1], [1,3]]
+        self.apply_matrix(matrix2)
+        self.wait()
+        self.apply_matrix(matrix1)
+        self.wait()
+
+class LinearTransformExample1a(LinearTransformationScene):
+    def __init__(self):
+        LinearTransformationScene.__init__(
+        self,
+        show_coordinates = True
+        )
+    def construct(self):
+        title = Tex(r"$\begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix}$",
+                    r"$\begin{bmatrix} 1 & 2 \\ 0 & 1 \end{bmatrix}$")
+        self.add_title(title)
+        shear_matrix = [[1,2], [0,1]]
+        self.apply_matrix(shear_matrix)
+        self.wait()
+        rotation_matrix = [[0,-1], [1,0]]
+        self.apply_matrix(rotation_matrix)
+        self.wait()
+        answer = Matrix([ [0,-1], [1,2] ], 
+                        include_background_rectangle=True).next_to(ORIGIN, 3*RIGHT + UP)
+        self.play(Create(answer))
+        self.wait()
+
+class LinearTransformExample1b(LinearTransformationScene):
+    def __init__(self):
+        LinearTransformationScene.__init__(
+        self,
+        show_coordinates = True
+        )
+    def construct(self):
+        title = Tex(r"$\begin{bmatrix} 1 & 2 \\ 0 & 1 \end{bmatrix}$",
+                    r"$\begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix}$")
+        self.add_title(title)
+        rotation_matrix = [[0,-1], [1,0]]
+        self.apply_matrix(rotation_matrix)
+        self.wait()
+        shear_matrix = [[1,2], [0,1]]
+        self.apply_matrix(shear_matrix)
+        self.wait()
+        answer = Matrix([ [2,-1], [1,0] ], 
+                        include_background_rectangle=True).next_to([2,1,0], RIGHT + DOWN)
+        self.play(Create(answer))
+        self.wait()
+        
 
