@@ -1,0 +1,5 @@
+# This file is used internally by FFMPEG.
+file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/matrix_mult/480p15/partial_movie_files/VertShear/3163782288_1556827842_1275565753.mp4'
+file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/matrix_mult/480p15/partial_movie_files/VertShear/2201830969_398514950_1290895717.mp4'
+file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/matrix_mult/480p15/partial_movie_files/VertShear/2201830969_2651971850_845020803.mp4'
+file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/matrix_mult/480p15/partial_movie_files/VertShear/2201830969_398514950_3729137458.mp4'

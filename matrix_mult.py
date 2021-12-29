@@ -109,6 +109,112 @@ class LinearTransform2(LinearTransformationScene):
         self.apply_matrix(matrix1)
         self.wait()
 
+class Rotate90CCW(LinearTransformationScene):
+    def __init__(self):
+        LinearTransformationScene.__init__(
+        self
+        )
+    def construct(self):
+        self.add_unit_square()
+        rotate90ccw_txt = Tex("Rotate $90^\circ$ counterclockwise.")
+        self.add_title(rotate90ccw_txt)
+        rotate90ccw_mat = [ [0,-1], [1,0] ]
+        self.apply_matrix(rotate90ccw_mat)
+        self.wait()
+        self.play(Write(Matrix(rotate90ccw_mat).move_to((3,1.5,0))))
+        self.wait()
+
+class Rotate90CW(LinearTransformationScene):
+    def __init__(self):
+        LinearTransformationScene.__init__(
+        self
+        )
+    def construct(self):
+        self.add_unit_square()
+        rotate90cw_txt = Tex("Rotate $90^\circ$ clockwise.")
+        self.add_title(rotate90cw_txt)
+        rotate90cw_mat = [ [0,1], [-1,0] ]
+        self.apply_matrix(rotate90cw_mat)
+        self.wait()
+        self.play(Write(Matrix(rotate90cw_mat).move_to((3,1.5,0))))
+        self.wait()
+
+class HorizShear(LinearTransformationScene):
+    def __init__(self):
+        LinearTransformationScene.__init__(
+        self
+        )
+    def construct(self):
+        self.add_unit_square()
+        horiz_shear_txt = Tex("Shear horizontally")
+        self.add_title(horiz_shear_txt)
+        horiz_shear_mat = [ [1,-1], [0,1] ]
+        self.apply_matrix(horiz_shear_mat)
+        self.wait()
+        self.play(Write(Matrix(horiz_shear_mat).move_to((3,1.5,0))))
+        self.wait()
+
+class VertShear(LinearTransformationScene):
+    def __init__(self):
+        LinearTransformationScene.__init__(
+        self
+        )
+    def construct(self):
+        self.add_unit_square()
+        vert_shear_txt = Tex("Shear vertically")
+        self.add_title(vert_shear_txt)
+        vert_shear_mat = [ [1,0], [-1,1] ]
+        self.apply_matrix(vert_shear_mat)
+        self.wait()
+        self.play(Write(Matrix(vert_shear_mat).move_to((3,1.5,0))))
+        self.wait()
+
+class ScaleUp(LinearTransformationScene):
+    def __init__(self):
+        LinearTransformationScene.__init__(
+        self
+        )
+    def construct(self):
+        self.add_unit_square()
+        scl_up_txt = Tex("Scale up")
+        self.add_title(scl_up_txt)
+        scl_up_mat = [ [2,0], [0,2] ]
+        self.apply_matrix(scl_up_mat)
+        self.wait()
+        self.play(Write(Matrix(scl_up_mat).move_to((3.5,1.5,0))))
+        self.wait()
+
+class ScaleDown(LinearTransformationScene):
+    def __init__(self):
+        LinearTransformationScene.__init__(
+        self
+        )
+    def construct(self):
+        self.add_unit_square()
+        scl_down_txt = Tex("Scale down")
+        self.add_title(scl_down_txt)
+        scl_down_mat = [ [0.3,0], [0,0.3] ]
+        self.apply_matrix(scl_down_mat)
+        self.wait()
+        self.play(Write(Matrix(scl_down_mat).move_to((5.5,1.5,0))))
+        self.wait()
+
+class MultipleTransform(LinearTransformationScene):
+    def __init__(self):
+        LinearTransformationScene.__init__(
+            self
+        )
+    def construct(self):
+        grandma = ImageMobject("./grandma.jpg").scale(0.25)
+        grandma.move_to(ORIGIN, DL)
+        self.add_transformable_mobject(grandma)
+        rotate180 = [ [-1,0],[0,-1] ]
+        self.apply_matrix(rotate180)
+        self.wait()
+        shear = [ [1,1], [0,2] ]
+        self.apply_matrix(shear)
+        self.wait()
+
 class LinearTransformExample2a(LinearTransformationScene):
     def __init__(self):
         LinearTransformationScene.__init__(
@@ -140,11 +246,14 @@ class LinearTransformExample2b(LinearTransformationScene):
         title = Tex(r"$\begin{bmatrix} 1 & 2 \\ 0 & 1 \end{bmatrix}$",
                     r"$\begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix}$")
         self.add_title(title)
+        # self.add_unit_square()
         rotation_matrix = [[0,-1], [1,0]]
         self.apply_matrix(rotation_matrix)
+        # self.play(grandma.animate.apply_matrix(rotation_matrix))
         self.wait()
         shear_matrix = [[1,2], [0,1]]
         self.apply_matrix(shear_matrix)
+        # self.play(grandma.animate.apply_matrix(shear_matrix))
         self.wait()
         answer = Matrix([ [2,-1], [1,0] ], 
                         include_background_rectangle=True).next_to([2,1,0], RIGHT + DOWN)
