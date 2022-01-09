@@ -12,7 +12,7 @@ class FunctionExtrema(Scene):
 		def func(x):
 			return x**3 + x**2 - 3*x - 1
 
-		graph = ax.get_graph(func, color = RED)
+		graph = ax.plot(func, color = RED)
 
 		t = ValueTracker(-2.50)
 
