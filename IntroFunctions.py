@@ -152,7 +152,7 @@ class Example1(Scene):
 		self.play(Create(ex2a_axes))
 		def ex2a_func(x):
 			return -0.5*x - 0.5
-		graph_2a = ex2a_axes.get_graph(ex2a_func)
+		graph_2a = ex2a_axes.plot(ex2a_func)
 		self.play(Create(graph_2a))
 		self.wait()
 		ex2a_lines = VGroup()
@@ -167,7 +167,7 @@ class Example1(Scene):
 		self.play(Create(ex2b_axes))
 		def ex2b_func(x):
 			return -0.5*x*x + 0.5
-		graph_2b = ex2b_axes.get_graph(ex2b_func)
+		graph_2b = ex2b_axes.plot(ex2b_func)
 		self.play(Create(graph_2b))
 		self.wait()
 		ex2b_lines = VGroup()
@@ -274,7 +274,7 @@ class FunctionMachine(Scene):
 		def func(x):
 			return x**2 - 1
 
-		graph = ex3c_axes.get_graph(func)
+		graph = ex3c_axes.plot(func)
 		self.play(Create(ex3c_axes))
 		self.wait()
 		self.add(graph)
