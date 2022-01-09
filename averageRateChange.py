@@ -5,8 +5,8 @@ class AverageRateOfChange(Scene):
 
         text_start = Text("The average rate of change is the slope \n" \
         "of the line between 2 points on a curve.",
-            t2c={'[3:22]': ORANGE, '[27:32]': BLUE},
-            t2w={'slope': BOLD})
+            t2c={'average rate of change': ORANGE, 'slope': BLUE},
+            t2w={'slope ': BOLD})
 
         self.play(Write(text_start), run_time=3)
         self.wait()
@@ -53,7 +53,7 @@ class AverageRateOfChange(Scene):
         def func(x):
             return 0.5 * (x-1)**2 + 1
         
-        graph = axes.get_graph(func)
+        graph = axes.plot(func)
 
         x1 = 0
         y1 = func(x1)
