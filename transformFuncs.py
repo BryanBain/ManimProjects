@@ -37,12 +37,12 @@ class MultipleFuncTransformsExampleB(Scene):
         g1 = plane.plot(lambda x: np.power(x+3,2)).set_color(BLUE)
         g1_lbl = plane.get_graph_label(graph = g1, label = Tex("$f(x)=(x+3)^2$"), direction = RIGHT)
         g1_grp = VGroup(g1, g1_lbl)
-        self.play(ReplacementTransform(f_grp, g1_grp), run_time=2)
+        self.play(Transform(f_grp, g1_grp), run_time=2)
         self.wait()
         g_func = plane.plot(lambda x: 0.5*np.power(x+3,2)).set_color(ORANGE)
         g_lbl = plane.get_graph_label(graph = g_func, label = Tex("$g(x)=\\frac{1}{2}(x+3)^2$"), direction = RIGHT)
         g_grp = VGroup(g_func, g_lbl)
-        self.play(Transform(g1_grp, g_grp))
+        self.play(Transform(f_grp, g_grp))
         self.wait()
 
 class MultipleFuncTransformsExampleC(Scene):
