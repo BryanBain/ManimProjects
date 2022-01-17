@@ -1,5 +1,24 @@
 from manim import *
 
+class MultipleTransformations(Scene):
+    def construct(self):
+        title = Title("Multiple Transformations")
+        self.play(Write(title))
+        description = Text("Perform multiple transformations in the following order:"
+                        ).move_to(2*UP).scale(0.85)
+        self.play(Write(description))
+        self.wait()
+        step1 = Text("1. Horizontal translations").next_to(description, DOWN)
+        self.play(Write(step1))
+        step2 = Text("2. Reflections").next_to(step1, DOWN)
+        self.play(Write(step2))
+        step3 = Text("3. Stretch or compression").next_to(step2, DOWN)
+        self.play(Write(step3))
+        step4 = Text("4. Vertical translations").next_to(step3, DOWN)
+        self.play(Write(step4))
+        self.wait()
+
+
 class MultipleFuncTransformsExampleA(Scene):
     def construct(self):
         plane = NumberPlane().add_coordinates()
