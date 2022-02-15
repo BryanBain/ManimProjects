@@ -1,0 +1,6 @@
+# This file is used internally by FFMPEG.
+file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/matrix_mult/480p15/partial_movie_files/MatrixTimesMatrix/73438747_3493041802_3287546172.mp4'
+file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/matrix_mult/480p15/partial_movie_files/MatrixTimesMatrix/735822815_85269838_722555572.mp4'
+file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/matrix_mult/480p15/partial_movie_files/MatrixTimesMatrix/735822815_398514950_2130495031.mp4'
+file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/matrix_mult/480p15/partial_movie_files/MatrixTimesMatrix/735822815_1894129947_1290427155.mp4'
+file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/matrix_mult/480p15/partial_movie_files/MatrixTimesMatrix/735822815_398514950_3553883690.mp4'

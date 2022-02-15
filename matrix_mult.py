@@ -10,15 +10,15 @@ class MatrixMultIntro(Scene):
         intro_txt1 = Text("Matrix multiplication does not work the way you might think.").scale(0.8).move_to(UP)
         self.play(Write(intro_txt1))
         self.wait()
-        matrix_A_txt = Tex(r"$A = \begin{bmatrix} 3 & -2 \\ 1 & 0 \end{bmatrix}$").move_to(LEFT)
+        matrix_A_txt = Tex(r"$A = \begin{bmatrix} 1 & -2 \\ 1 & 0 \end{bmatrix}$").move_to(LEFT)
         self.play(Write(matrix_A_txt))
         self.wait()
         matrix_B_txt = Tex(r"$B = \begin{bmatrix} -1 & 4 \\ 5 & 6 \end{bmatrix}$").next_to(matrix_A_txt, 2*RIGHT)
         self.play(Write(matrix_B_txt))
-        self.wait()
-        not_AB = Tex(r"$AB \neq \begin{bmatrix} -3 & -8 \\ 5 & 0 \end{bmatrix}$").to_edge(DOWN, buff=1)
+        self.wait(2)
+        not_AB = Tex(r"$AB \neq \begin{bmatrix} -1 & -8 \\ 5 & 0 \end{bmatrix}$").to_edge(DOWN, buff=1)
         self.play(Write(not_AB))
-        self.wait()
+        self.wait(2)
         intro_group = VGroup(title, intro_txt1, matrix_A_txt, matrix_B_txt, not_AB)
         self.play(Uncreate(intro_group))
         self.wait()
@@ -28,7 +28,7 @@ class MatrixMultIntro(Scene):
         self.wait()
         self.play(explanation.animate.to_edge(UP))
         self.wait()
-        matrix_A = Matrix([[3,-2],[1,0]])
+        matrix_A = Matrix([[1,-2],[1,0]])
         self.play(Write(matrix_A))
         self.wait()
         i_box = SurroundingRectangle(matrix_A.get_columns()[0], color=GREEN)
@@ -44,6 +44,24 @@ class MatrixMultIntro(Scene):
         self.play(Write(j_hat))
         self.wait()
 
+class MatrixMultIntro2(LinearTransformationScene):
+    def __init__(self):
+        LinearTransformationScene.__init__(self, show_coordinates=True)
+    def construct(self):
+        matrix_A = [[1,-2],[1,0]]
+        title = Tex("Multiplying by ")
+        matrix_A_txt = Matrix(matrix_A).next_to(title, RIGHT)
+        i_col = matrix_A_txt.get_columns()[0]
+        j_col = matrix_A_txt.get_columns()[1]
+        i_col_box = SurroundingRectangle(i_col, color='#83C167')
+        j_col_box = SurroundingRectangle(j_col, color='#FC6255')
+        title_grp = VGroup(title, matrix_A_txt, i_col_box, j_col_box)
+        self.add_title(title_grp)
+        self.wait()
+        self.apply_matrix(matrix_A)
+        self.wait()
+
+
 class LinearTransform(LinearTransformationScene):
     def __init__(self):
         LinearTransformationScene.__init__(
@@ -52,23 +70,41 @@ class LinearTransform(LinearTransformationScene):
             # leave_ghost_vectors=True,
         )
     def construct(self):
+        i_hat_lbl = Tex(r"$\hat{\imath}$").next_to((1,0,0), DOWN).set_color('#83C167')
+        j_hat_lbl = Tex(r"$\hat{\jmath}$").next_to((0,1,0), LEFT).set_color('#FC6255')
+        basis_grp = VGroup(i_hat_lbl, j_hat_lbl)
+        self.play(Write(basis_grp))
         vec = self.add_vector([1,3])
-        self.write_vector_coordinates(vec)
+        vec_txt = Tex(r"$\begin{bmatrix} 1 \\ 3\end{bmatrix}$"
+                    ).next_to(vec.get_tip(), RIGHT).set_color(YELLOW)
+        self.play(Write(vec_txt))
         self.wait()
         self.get_basis_vector_labels
         matrix_A = [[1,-2],[1,0]]
+        matrix_A_txt = Matrix(matrix_A).next_to(vec_txt, LEFT)
+        self.play(Write(matrix_A_txt))
+        i_col = matrix_A_txt.get_columns()[0]
+        j_col = matrix_A_txt.get_columns()[1]
+        self.play(Create(SurroundingRectangle(i_col, color='#83C167')))
+        self.play(Create(SurroundingRectangle(j_col, color='#FC6255')))
+        self.remove(basis_grp)
+        self.wait()
         self.apply_matrix(matrix_A)
         self.wait()
-        self.write_vector_coordinates(vec)
+        self.write_vector_coordinates(vec).set_color(YELLOW)
         self.wait()
         new_ihat = Line(start=(0,0,0), end=(1,1,0), color=GREEN).add_tip()
         self.play(Create(new_ihat))
+        self.wait()
+        self.play(Create(SurroundingRectangle(vec_txt[0][1], color='#83C167')))
         self.wait()
         i_brace = BraceBetweenPoints((0,0,0), (1,1,0), color=GREEN)
         self.play(Create(i_brace))
         self.wait()
         i_brace_txt = i_brace.get_text("$1\hat\imath$",buff=0.1).set_color(GREEN)
         self.play(Write(i_brace_txt))
+        self.wait()
+        self.play(Create(SurroundingRectangle(vec_txt[0][2], color='#FC6255')))
         self.wait()
         new_jhat1 = Line(start=(1,1,0), end=(-1,1,0), color=RED).add_tip()
         self.play(Create(new_jhat1))
@@ -83,27 +119,27 @@ class LinearTransform(LinearTransformationScene):
         j_brace_txt = j_brace.get_text("$3\hat\jmath$", buff=0.1).set_color(RED)
         self.play(Write(j_brace_txt))
         self.wait()
-        matrix1_grp = VGroup(new_ihat, new_jhat1, new_jhat2, new_jhat3, i_brace,
-                            i_brace_txt, j_brace, j_brace_txt)
-        self.play(Uncreate(matrix1_grp))
-        self.wait()
-        self.remove(self.write_vector_coordinates(vec))
-        matrix_B = [[-1,1],[-1,-2]]
-        self.apply_matrix(matrix_B)
-        self.wait()
 
-class LinearTransform2(LinearTransformationScene):
+
+class MatrixTimesMatrix(LinearTransformationScene):
+    config.frame_width = 18
+    config.frame_height = 40
     def __init__(self):
         LinearTransformationScene.__init__(
             self, 
             background_plane_kwargs={'x_range':(-9,9), 'y_range':(-9,9)},
-            foreground_plane_kwargs={'x_range':[-9,9], 'y_range':(-9,9)}
-            # show_coordinates=True,
-            # leave_ghost_vectors=True,
+            foreground_plane_kwargs={'x_range':[-9,9], 'y_range':(-9,9)},
+            show_coordinates=True,
+            # leave_ghost_vectors=True
         )
     def construct(self):
         matrix1 = [[2,1], [1,2]]
         matrix2 = [[1,-1], [1,3]]
+        matrix1_txt = Matrix(matrix1).move_to((-6,2,0))
+        matrix2_txt = Matrix(matrix2).next_to(matrix1_txt, RIGHT)
+        product = VGroup(matrix1_txt, matrix2_txt)
+        self.add(product)
+        self.wait()
         self.apply_matrix(matrix2)
         self.wait()
         self.apply_matrix(matrix1)
@@ -115,13 +151,29 @@ class Rotate90CCW(LinearTransformationScene):
         self
         )
     def construct(self):
+        config.frame_width = 16
+        config.frame_height = 9
         self.add_unit_square()
-        rotate90ccw_txt = Tex("Rotate $90^\circ$ counterclockwise.")
-        self.add_title(rotate90ccw_txt)
+        rotate90ccw_txt = Tex(r"Rotate $90^\circ$ counterclockwise $\begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix}$")
         rotate90ccw_mat = [ [0,-1], [1,0] ]
+        self.add_title(rotate90ccw_txt)
         self.apply_matrix(rotate90ccw_mat)
         self.wait()
-        self.play(Write(Matrix(rotate90ccw_mat).move_to((3,1.5,0))))
+
+class Rotate180(LinearTransformationScene):
+    def __init__(self):
+        LinearTransformationScene.__init__(
+        self,
+        show_coordinates=True
+        )
+    def construct(self):
+        config.frame_width = 16
+        config.frame_height = 9
+        self.add_unit_square()
+        rotate90ccw_txt = Tex(r"Rotate $180^\circ$  $\begin{bmatrix} -1 & 0 \\ 0 & -1 \end{bmatrix}$")
+        rotate90ccw_mat = [ [-1,0], [0,-1] ]
+        self.add_title(rotate90ccw_txt)
+        self.apply_matrix(rotate90ccw_mat)
         self.wait()
 
 class Rotate90CW(LinearTransformationScene):
@@ -259,5 +311,3 @@ class LinearTransformExample2b(LinearTransformationScene):
                         include_background_rectangle=True).next_to([2,1,0], RIGHT + DOWN)
         self.play(Create(answer))
         self.wait()
-        
-

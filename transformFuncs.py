@@ -4,22 +4,27 @@ class MultipleTransformations(Scene):
     def construct(self):
         title = Title("Multiple Transformations")
         self.play(Write(title))
+        self.wait()
         description = Text("Perform multiple transformations in the following order:"
                         ).move_to(2*UP).scale(0.85)
         self.play(Write(description))
         self.wait()
         step1 = Text("1. Horizontal translations").next_to(description, DOWN)
         self.play(Write(step1))
+        self.wait()
         step2 = Text("2. Reflections").next_to(step1, DOWN)
         self.play(Write(step2))
+        self.wait()
         step3 = Text("3. Stretch or compression").next_to(step2, DOWN)
         self.play(Write(step3))
+        self.wait()
         step4 = Text("4. Vertical translations").next_to(step3, DOWN)
         self.play(Write(step4))
         self.wait()
 
 
 class MultipleFuncTransformsExampleA(Scene):
+    # Graphs f(x) = sqrt(x) and g(x) = -2sqrt(x-3)
     def construct(self):
         plane = NumberPlane().add_coordinates()
         self.add(plane)
@@ -45,6 +50,7 @@ class MultipleFuncTransformsExampleA(Scene):
         self.wait()
 
 class MultipleFuncTransformsExampleB(Scene):
+    # Graphs f(x) = x^2 and g(x) = 1/2 * (x+3)^2
     def construct(self):
         plane = NumberPlane().add_coordinates()
         self.add(plane)
@@ -65,6 +71,7 @@ class MultipleFuncTransformsExampleB(Scene):
         self.wait()
 
 class MultipleFuncTransformsExampleC(Scene):
+    # Graphs f(x) = |x| and g(x) = |-x + 2| + 1
     def construct(self):
         plane = NumberPlane().add_coordinates()
         self.add(plane)
@@ -90,6 +97,7 @@ class MultipleFuncTransformsExampleC(Scene):
         self.wait()
 
 class MultipleFuncTransformsExampleD(Scene):
+    # Graphs f(x) = x^3 and g(x) = -1/5 * (x-2)^3 - 3
     def construct(self):
         plane = NumberPlane().add_coordinates()
         self.add(plane)
