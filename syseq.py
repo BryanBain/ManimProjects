@@ -84,6 +84,8 @@ class Example1a(LinearTransformationScene):
         self.wait()
 
 class Example1b(LinearTransformationScene):
+    config.frame_width = 20
+    config.frame_height = 12
     def __init__(self):
         LinearTransformationScene.__init__(
             self,
@@ -91,7 +93,6 @@ class Example1b(LinearTransformationScene):
             background_plane_kwargs={'x_range':[-10,10,1],
                                     'y_range':[-8,8,1]}
         )
-    
     def construct(self):
         title = Tex(r"$\begin{bmatrix} 1 & 1 \\ 2 & 1 \end{bmatrix}$",
         r"$\begin{bmatrix} x \\ y \end{bmatrix} = $",
@@ -104,23 +105,23 @@ class Example1b(LinearTransformationScene):
         self.apply_matrix(matrix)
         self.wait()
 
-        i_sol = Vector((2,-2)).set_color('#83C167')
+        i_sol = Line(start=[1,2,0], end=[2,4,0]).add_tip().set_color('#83C167')
         self.play(Create(i_sol))
         self.wait()
-        j_sol = Line(start=[2,-2,0], end=[4,-1,0]).add_tip().set_color('#FC6255')
+        j_sol = Line(start=[2,4,0], end=[1,3,0]).add_tip().set_color('#FC6255')
         self.play(Create(j_sol))
         self.wait()
-        i_brace = BraceBetweenPoints([0,0,0], [2,-2,0]).set_color('#83C167')
+        i_brace = BraceBetweenPoints([0,0,0], [2,4,0]).set_color('#83C167')
         self.play(Create(i_brace))
-        i_sol_lbl = i_brace.get_text("$-1\hat\imath$", buff=0.1).set_color('#83C167')
+        i_sol_lbl = i_brace.get_text("$2\hat\imath$", buff=0.2).set_color('#83C167')
         self.play(Write(i_sol_lbl))
         self.wait()
-        j_brace = BraceBetweenPoints([2,-2,0], [4,-1,0]).set_color('#FC6255')
+        j_brace = BraceBetweenPoints([2,4,0], [1,3,0]).set_color('#FC6255')
         self.play(Create(j_brace))
-        j_brace_lbl = j_brace.get_text("$1\hat\jmath$", buff=0.1).set_color('#FC6255')
+        j_brace_lbl = j_brace.get_text("$-1\hat\jmath$", buff=0.1).set_color('#FC6255')
         self.play(Write(j_brace_lbl))
         self.wait()
-        answer = Tex(r"$\begin{bmatrix} -1 \\ 1 \end{bmatrix}$").to_edge(UR+0.75*DOWN, buff=1)
+        answer = Tex(r"$\begin{bmatrix} 2 \\ -1 \end{bmatrix}$").move_to((4,2,0))
         self.play(Write(answer))
         self.play(Create(SurroundingRectangle(answer)))
         self.wait()
