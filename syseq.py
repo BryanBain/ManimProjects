@@ -14,7 +14,7 @@ class SysEq(LinearTransformationScene):
                     r"$\begin{bmatrix} x \\ y \end{bmatrix}$",
                     r"$ = \begin{bmatrix} 3 \\ -1 \end{bmatrix}$").to_edge(UL)
         self.add_title(title)
-        point = Dot((3,-1,0), color=YELLOW)
+        point = Dot((3,-1,0), color=YELLOW).scale(1.5)
         self.add(point)
         matrix = [ [1,1], [-1,1] ]
         self.apply_matrix(matrix)
@@ -56,7 +56,7 @@ class Example1a(LinearTransformationScene):
         r"$\begin{bmatrix} 4 \\ -1 \end{bmatrix}$")
         self.add_title(title)
 
-        point = Dot((4,-1,0), color=YELLOW)
+        point = Dot((4,-1,0), color=YELLOW).scale(1.5)
         self.add(point)
         matrix = [ [-2,2], [2,1] ]
         self.apply_matrix(matrix)
@@ -99,7 +99,7 @@ class Example1b(LinearTransformationScene):
         r"$\begin{bmatrix} 1 \\ 3 \end{bmatrix}$").to_edge(UL)
         self.add_title(title)
 
-        point = Dot((1,3,0), color=YELLOW)
+        point = Dot((1,3,0), color=YELLOW).scale(1.5)
         self.add(point)
         matrix = [ [1,1], [2,1] ]
         self.apply_matrix(matrix)
@@ -124,4 +124,92 @@ class Example1b(LinearTransformationScene):
         answer = Tex(r"$\begin{bmatrix} 2 \\ -1 \end{bmatrix}$").move_to((4,2,0))
         self.play(Write(answer))
         self.play(Create(SurroundingRectangle(answer)))
+        self.wait()
+
+class InfiniteSolutionsIntro(LinearTransformationScene):
+    # config.frame_width = 20
+    # config.frame_height = 12
+    def __init__(self):
+        LinearTransformationScene.__init__(
+            self,
+            show_coordinates=True,
+            background_plane_kwargs={'x_range':[-10,10,1],
+                                    'y_range':[-8,8,1]}
+        )
+    def construct(self):
+        title = Tex(r"$\begin{bmatrix} 1 & -2 \\ -2 & 4 \end{bmatrix}$",
+        r"$\begin{bmatrix} x \\ y \end{bmatrix} = $",
+        r"$\begin{bmatrix} 2 \\ -4 \end{bmatrix}$").to_edge(UR+3*DOWN, buff=4)
+        self.add_title(title)
+
+        point = Dot((2,-4,0), color=YELLOW).scale(1.5)
+        self.add(point)
+        matrix = [ [1,-2], [-2,4] ]
+        self.apply_matrix(matrix)
+        self.wait()
+
+class NoSolutionsIntro(LinearTransformationScene):
+    # config.frame_width = 20
+    # config.frame_height = 12
+    def __init__(self):
+        LinearTransformationScene.__init__(
+            self,
+            show_coordinates=True,
+            background_plane_kwargs={'x_range':[-10,10,1],
+                                    'y_range':[-8,8,1]}
+        )
+    def construct(self):
+        title = Tex(r"$\begin{bmatrix} 1 & -2 \\ -2 & 4 \end{bmatrix}$",
+        r"$\begin{bmatrix} x \\ y \end{bmatrix} = $",
+        r"$\begin{bmatrix} 2 \\ 3 \end{bmatrix}$").to_edge(UR+3*DOWN, buff=4)
+        self.add_title(title)
+
+        point = Dot((2,3,0), color=YELLOW).scale(1.5)
+        self.add(point)
+        matrix = [ [1,-2], [-2,4] ]
+        self.apply_matrix(matrix)
+        self.wait()
+
+class Example2a(LinearTransformationScene):
+    # config.frame_width = 20
+    # config.frame_height = 12
+    def __init__(self):
+        LinearTransformationScene.__init__(
+            self,
+            show_coordinates=True,
+            background_plane_kwargs={'x_range':[-10,10,1],
+                                    'y_range':[-8,8,1]}
+        )
+    def construct(self):
+        title = Tex(r"$\begin{bmatrix} 1 & -2 \\ 2 & -4 \end{bmatrix}$",
+        r"$\begin{bmatrix} x \\ y \end{bmatrix} = $",
+        r"$\begin{bmatrix} 4 \\ 5 \end{bmatrix}$").to_edge(UL+3*DOWN, buff=4)
+        self.add_title(title)
+
+        point = Dot((4,5,0), color=YELLOW).scale(1.5)
+        self.add(point)
+        matrix = [ [1,-2], [2,-4] ]
+        self.apply_matrix(matrix)
+        self.wait()
+
+class Example2b(LinearTransformationScene):
+    # config.frame_width = 20
+    # config.frame_height = 12
+    def __init__(self):
+        LinearTransformationScene.__init__(
+            self,
+            show_coordinates=True,
+            background_plane_kwargs={'x_range':[-10,10,1],
+                                    'y_range':[-8,8,1]}
+        )
+    def construct(self):
+        title = Tex(r"$\begin{bmatrix} 2 & -2 \\ 1 & -1 \end{bmatrix}$",
+        r"$\begin{bmatrix} x \\ y \end{bmatrix} = $",
+        r"$\begin{bmatrix} 4 \\ 2 \end{bmatrix}$").to_edge(UL+3*DOWN, buff=4)
+        self.add_title(title)
+
+        point = Dot((4,2,0), color=YELLOW).scale(1.5)
+        self.add(point)
+        matrix = [ [2,-2], [1,-1] ]
+        self.apply_matrix(matrix)
         self.wait()
