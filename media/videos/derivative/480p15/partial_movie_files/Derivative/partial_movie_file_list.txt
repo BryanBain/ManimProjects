@@ -1,6 +1,0 @@
-# This file is used internally by FFMPEG.
-file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/derivative/480p15/partial_movie_files/Derivative/3163782288_1018438908_1554212914.mp4'
-file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/derivative/480p15/partial_movie_files/Derivative/2201830969_3423434805_1808912702.mp4'
-file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/derivative/480p15/partial_movie_files/Derivative/2201830969_4160205052_4198634417.mp4'
-file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/derivative/480p15/partial_movie_files/Derivative/2201830969_834164614_3169164583.mp4'
-file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/derivative/480p15/partial_movie_files/Derivative/2201830969_3638504700_2829261159.mp4'
