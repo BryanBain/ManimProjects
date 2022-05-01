@@ -2,32 +2,120 @@ from manim import *
 import scipy.integrate as integrate
 
 class Riemann4(Scene):
-    def contruct(self):
-        plane = NumberPlane(x_range=[-1,6], y_range=[-1,26,2], y_length = 7, 
-                            x_length = 6
-        ).add_coordinates()
+  def construct(self):
+    plane = NumberPlane(x_range=[-1,6], y_range=[-1,26,2], y_length = 7, 
+                        x_length = 6
+    ).add_coordinates().to_edge(LEFT)
 
-        f = lambda x: x**2
-        f_graph = plane.plot(f, x_range = [-1,5.1])
+    f = lambda x: x**2
+    f_graph = plane.plot(f, x_range = [-1,5.1])
 
-        x_min = 1
-        x_max = 5
-        num_rects = 8
-        dx = (x_max - x_min) / num_rects
+    x_min = 1
+    x_max = 5
+    num_rects = 4
+    dx = (x_max - x_min) / num_rects
 
-        left_rects = plane.get_riemann_rectangles(
-            f_graph, 
-            x_range = [x_min, x_max], 
-            dx = dx, 
-            input_sample_type = "left"
-        )
+    left_rects = plane.get_riemann_rectangles(
+        f_graph, 
+        x_range = [x_min, x_max], 
+        dx = dx, 
+        input_sample_type = "left"
+    )
 
-        self.play(Create(plane))
-        self.play(Create(f_graph))
-        self.wait()
-        for i in range(num_rects):
-            self.play(Create(left_rects[i]), run_time = 2)
-        self.wait()
+    self.add(plane)
+    self.play(Create(f_graph))
+    self.wait()
+    for i in range(num_rects):
+      self.play(Create(left_rects[i]), run_time = 2)
+    self.wait(2)
+
+    self.play(Uncreate(left_rects))
+
+    right_rects = plane.get_riemann_rectangles(
+        f_graph, 
+        x_range = [x_min, x_max], 
+        dx = dx, 
+        input_sample_type = "right",
+        fill_opacity = 0.6
+    )
+
+    self.wait()
+    for i in range(num_rects):
+      self.play(Create(right_rects[i]), run_time = 2)
+    self.wait(2)
+
+    self.play(Uncreate(right_rects))
+
+    center_rects = plane.get_riemann_rectangles(
+        f_graph, 
+        x_range = [x_min, x_max], 
+        dx = dx, 
+        input_sample_type = "center",
+        fill_opacity = 0.7
+    )
+    
+    self.wait()
+    for i in range(num_rects):
+      self.play(Create(center_rects[i]), run_time = 2)
+    self.wait(2)
+
+class Riemann8(Scene):
+  def construct(self):
+    plane = NumberPlane(x_range=[-1,6], y_range=[-1,26,2], y_length = 7, 
+                        x_length = 6
+    ).add_coordinates().to_edge(LEFT)
+
+    f = lambda x: x**2
+    f_graph = plane.plot(f, x_range = [-1,5.1])
+
+    x_min = 1
+    x_max = 5
+    num_rects = 8
+    dx = (x_max - x_min) / num_rects
+
+    left_rects = plane.get_riemann_rectangles(
+        f_graph, 
+        x_range = [x_min, x_max], 
+        dx = dx, 
+        input_sample_type = "left"
+    )
+
+    self.add(plane)
+    self.play(Create(f_graph))
+    self.wait()
+    for i in range(num_rects):
+      self.play(Create(left_rects[i]), run_time = 1)
+    self.wait(2)
+
+    self.play(Uncreate(left_rects))
+
+    right_rects = plane.get_riemann_rectangles(
+        f_graph, 
+        x_range = [x_min, x_max], 
+        dx = dx, 
+        input_sample_type = "right",
+        fill_opacity = 0.6
+    )
+
+    self.wait()
+    for i in range(num_rects):
+      self.play(Create(right_rects[i]), run_time = 1)
+    self.wait(2)
+
+    self.play(Uncreate(right_rects))
+
+    center_rects = plane.get_riemann_rectangles(
+        f_graph, 
+        x_range = [x_min, x_max], 
+        dx = dx, 
+        input_sample_type = "center",
+        fill_opacity = 0.7
+    )
+    
+    self.wait()
+    for i in range(num_rects):
+      self.play(Create(center_rects[i]), run_time = 1)
+    self.wait(2)
 
 class RiemannArea(Scene):
   def construct(self):
