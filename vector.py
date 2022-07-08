@@ -1,7 +1,9 @@
 from manim import *
+from manim_editor import PresentationSectionType
 
 class IntroVectors(Scene):
 	def construct(self):
+		self.next_section(type=PresentationSectionType.NORMAL)
 		title = Title("Vectors")
 		self.play(Write(title))
 		self.wait()
@@ -14,6 +16,7 @@ class IntroVectors(Scene):
 		self.play(Uncreate(title))
 		self.play(Uncreate(definition))
 
+		self.next_section(type=PresentationSectionType.NORMAL)
 		plane = NumberPlane().add_coordinates()
 		vec1 = Line(start=plane.c2p(0,0), end=plane.c2p(2,3), color=YELLOW).add_tip()
 		vec2 = Line(start=plane.c2p(-2,-3), end=plane.c2p(4,1), color=BLUE).add_tip()
@@ -27,6 +30,7 @@ class IntroVectors(Scene):
 		self.remove(plane, vec1, vec2, vec3)
 		self.wait()
 
+		self.next_section(type=PresentationSectionType.NORMAL)
 		placement1 = Tex(r"We can start a vector anywhere,")
 		placement2 = Tex(r"but we usually draw it from the origin.").next_to(placement1, DOWN)
 		placement = VGroup(placement1, placement2).shift(2*UP)
@@ -34,6 +38,7 @@ class IntroVectors(Scene):
 		self.wait()
 		self.play(Uncreate(placement))
 
+		self.next_section(type=PresentationSectionType.NORMAL)
 		example = Tex(r"For instance, suppose we want to graph")
 		self.play(Write(example))
 		v = Matrix([[3],[4]])
@@ -54,6 +59,7 @@ class IntroVectors(Scene):
 		self.remove(example, vec1)
 		self.wait()
 
+		self.next_section(type=PresentationSectionType.NORMAL)
 		v = Matrix([[3],[4]])
 		vec_tex = Tex(r"$\vec{v} = $").next_to(v, LEFT)
 		vec1.to_edge(UP+RIGHT, buff=1).set_color(YELLOW)
