@@ -5,5 +5,5 @@ file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/tr
 file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/trig_graphs/480p15/partial_movie_files/CosineCurveUnitCircle/2201830969_641011677_1959565091.mp4'
 file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/trig_graphs/480p15/partial_movie_files/CosineCurveUnitCircle/2201830969_2096170957_2032714483.mp4'
 file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/trig_graphs/480p15/partial_movie_files/CosineCurveUnitCircle/2201830969_641011677_149701876.mp4'
-file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/trig_graphs/480p15/partial_movie_files/CosineCurveUnitCircle/2201830969_2461428578_3255241419.mp4'
-file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/trig_graphs/480p15/partial_movie_files/CosineCurveUnitCircle/2201830969_641011677_2969856858.mp4'
+file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/trig_graphs/480p15/partial_movie_files/CosineCurveUnitCircle/2201830969_2461428578_2853188160.mp4'
+file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/trig_graphs/480p15/partial_movie_files/CosineCurveUnitCircle/2201830969_641011677_2198053445.mp4'

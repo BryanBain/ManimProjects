@@ -22,6 +22,17 @@ def get_horiz_line_for_circle(x,y, width, color):
     result.add(line)
     return result
 
+def draw_radius(x,y, width, color):
+    result = VGroup()
+    radius = Line(
+        start = [-5.111111111,0,0],
+        end = [x,y,0],
+        stroke_width = width,
+        stroke_color = color
+    )
+    result.add(radius)
+    return result
+
 class SineCurveUnitCircle(Scene):
     def construct(self):
         title = Tex(r"$f(x) = \sin(x)$").to_edge(UR)
@@ -72,7 +83,11 @@ class SineCurveUnitCircle(Scene):
             lambda : get_vertical_line_for_circle(x=dot.get_center()[0],y=dot.get_center()[1], width=4, color=YELLOW)
         )
 
-        self.add(moving_vert_lines)
+        moving_radius = always_redraw(
+            lambda: draw_radius(x=dot.get_center()[0],y=dot.get_center()[1], width = 4, color=BLUE)
+        )
+
+        self.add(moving_vert_lines, moving_radius)
         self.play(
             t.animate.set_value(4*PI),
             Rotate(dot, angle = 4*PI, about_point=circle.get_center()),
@@ -133,7 +148,11 @@ class CosineCurveUnitCircle(Scene):
             lambda : get_horiz_line_for_circle(x=dot.get_center()[0],y=dot.get_center()[1], width=4, color=GREEN)
         )
 
-        self.add(moving_horiz_lines)
+        moving_radius = always_redraw(
+            lambda: draw_radius(x=dot.get_center()[0],y=dot.get_center()[1], width = 4, color=BLUE)
+        )
+
+        self.add(moving_horiz_lines, moving_radius)
         self.play(
             t.animate.set_value(4*PI),
             Rotate(dot, angle = 4*PI, about_point=circle.get_center()),
