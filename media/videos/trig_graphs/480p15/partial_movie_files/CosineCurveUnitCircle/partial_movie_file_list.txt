@@ -1,0 +1,9 @@
+# This file is used internally by FFMPEG.
+file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/trig_graphs/480p15/partial_movie_files/CosineCurveUnitCircle/3163782288_1286239057_223132457.mp4'
+file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/trig_graphs/480p15/partial_movie_files/CosineCurveUnitCircle/2201830969_624267249_3792405221.mp4'
+file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/trig_graphs/480p15/partial_movie_files/CosineCurveUnitCircle/2201830969_3380826423_1712395857.mp4'
+file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/trig_graphs/480p15/partial_movie_files/CosineCurveUnitCircle/2201830969_641011677_1959565091.mp4'
+file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/trig_graphs/480p15/partial_movie_files/CosineCurveUnitCircle/2201830969_2096170957_2032714483.mp4'
+file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/trig_graphs/480p15/partial_movie_files/CosineCurveUnitCircle/2201830969_641011677_149701876.mp4'
+file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/trig_graphs/480p15/partial_movie_files/CosineCurveUnitCircle/2201830969_2461428578_3255241419.mp4'
+file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/trig_graphs/480p15/partial_movie_files/CosineCurveUnitCircle/2201830969_641011677_2969856858.mp4'
