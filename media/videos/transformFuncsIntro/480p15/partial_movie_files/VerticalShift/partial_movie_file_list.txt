@@ -1,0 +1,11 @@
+# This file is used internally by FFMPEG.
+file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/transformFuncsIntro/480p15/partial_movie_files/VerticalShift/3163782288_1258482577_223132457.mp4'
+file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/transformFuncsIntro/480p15/partial_movie_files/VerticalShift/2201830969_329969645_2505188906.mp4'
+file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/transformFuncsIntro/480p15/partial_movie_files/VerticalShift/2201830969_153702904_3595582985.mp4'
+file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/transformFuncsIntro/480p15/partial_movie_files/VerticalShift/2201830969_329969645_2595250107.mp4'
+file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/transformFuncsIntro/480p15/partial_movie_files/VerticalShift/2201830969_4050343705_2504808840.mp4'
+file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/transformFuncsIntro/480p15/partial_movie_files/VerticalShift/2201830969_329969645_372461495.mp4'
+file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/transformFuncsIntro/480p15/partial_movie_files/VerticalShift/2201830969_374735387_515968625.mp4'
+file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/transformFuncsIntro/480p15/partial_movie_files/VerticalShift/2201830969_329969645_1033142995.mp4'
+file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/transformFuncsIntro/480p15/partial_movie_files/VerticalShift/2201830969_1655863192_2306955442.mp4'
+file 'file:/Users/bryanbain/Desktop/Manim_Projects/ManimProjects/media/videos/transformFuncsIntro/480p15/partial_movie_files/VerticalShift/2201830969_329969645_3220772902.mp4'

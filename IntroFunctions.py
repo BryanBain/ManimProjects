@@ -6,23 +6,23 @@ class IntroFunctions(Scene):
 		self.play(Write(title))
 		self.wait()
 
-		rel_def = Text("A relation is a set (a list) of ordered pairs.", t2c={' relatio': YELLOW})
+		rel_def = Text("A relation is a set (a list) of ordered pairs.", t2c={' relation': YELLOW})
 		self.play(Write(rel_def), run_time = 2)
 		self.play(rel_def.animate.shift(UP*2))
 		self.wait(3)
 
-		domain_def = Text("The domain is the set (the list) of all input values (x).", t2c={' domai':YELLOW}).scale(0.9)
+		domain_def = Text("The domain is the set (the list) of all input values (x).", t2c={' domain':YELLOW}).scale(0.9)
 		self.play(Write(domain_def), run_time = 2)
 		self.play(domain_def.animate.shift(UP))
 		self.wait(3)
 
-		range_def = Text("The range is the set (the list) of all output values (y).", t2c={' rang':YELLOW}).scale(0.9)
+		range_def = Text("The range is the set (the list) of all output values (y).", t2c={' range':YELLOW}).scale(0.9)
 		self.play(Write(range_def), run_time = 2)
 		self.wait(3)
 		self.remove(title, rel_def, domain_def, range_def)
 
 		func_def = Text("A function is a relation \nin which each element of the domain\n"
-			"has only one element in the range.", t2c={' functio':YELLOW})
+			"has only one element in the range.", t2c={' function':YELLOW})
 
 		self.play(Write(func_def), run_time = 2)
 		self.wait(8)

@@ -1,0 +1,7 @@
+# This file is used internally by FFMPEG.
+file 'file:/Users/bryanbain/Desktop/Desktop/Manim_Projects/ManimProjects/media/videos/MatrixInverse/480p15/partial_movie_files/IntroTransform/3163782288_3118903548_1383669322.mp4'
+file 'file:/Users/bryanbain/Desktop/Desktop/Manim_Projects/ManimProjects/media/videos/MatrixInverse/480p15/partial_movie_files/IntroTransform/2201830969_329969645_3836216938.mp4'
+file 'file:/Users/bryanbain/Desktop/Desktop/Manim_Projects/ManimProjects/media/videos/MatrixInverse/480p15/partial_movie_files/IntroTransform/2201830969_4261707195_2025043592.mp4'
+file 'file:/Users/bryanbain/Desktop/Desktop/Manim_Projects/ManimProjects/media/videos/MatrixInverse/480p15/partial_movie_files/IntroTransform/2201830969_329969645_450983537.mp4'
+file 'file:/Users/bryanbain/Desktop/Desktop/Manim_Projects/ManimProjects/media/videos/MatrixInverse/480p15/partial_movie_files/IntroTransform/2201830969_467502316_1158239498.mp4'
+file 'file:/Users/bryanbain/Desktop/Desktop/Manim_Projects/ManimProjects/media/videos/MatrixInverse/480p15/partial_movie_files/IntroTransform/2201830969_329969645_816798351.mp4'

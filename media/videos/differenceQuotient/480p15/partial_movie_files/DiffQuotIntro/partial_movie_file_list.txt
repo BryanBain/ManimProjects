@@ -1,0 +1,10 @@
+# This file is used internally by FFMPEG.
+file 'file:/Users/bryanbain/Desktop/Desktop/Manim_Projects/ManimProjects/media/videos/differenceQuotient/480p15/partial_movie_files/DiffQuotIntro/3163782288_2358615614_223132457.mp4'
+file 'file:/Users/bryanbain/Desktop/Desktop/Manim_Projects/ManimProjects/media/videos/differenceQuotient/480p15/partial_movie_files/DiffQuotIntro/2201830969_329969645_4070540373.mp4'
+file 'file:/Users/bryanbain/Desktop/Desktop/Manim_Projects/ManimProjects/media/videos/differenceQuotient/480p15/partial_movie_files/DiffQuotIntro/2201830969_1798326698_1926114023.mp4'
+file 'file:/Users/bryanbain/Desktop/Desktop/Manim_Projects/ManimProjects/media/videos/differenceQuotient/480p15/partial_movie_files/DiffQuotIntro/2201830969_865372845_3572791907.mp4'
+file 'file:/Users/bryanbain/Desktop/Desktop/Manim_Projects/ManimProjects/media/videos/differenceQuotient/480p15/partial_movie_files/DiffQuotIntro/2201830969_329969645_3112566142.mp4'
+file 'file:/Users/bryanbain/Desktop/Desktop/Manim_Projects/ManimProjects/media/videos/differenceQuotient/480p15/partial_movie_files/DiffQuotIntro/2201830969_71775192_2407877680.mp4'
+file 'file:/Users/bryanbain/Desktop/Desktop/Manim_Projects/ManimProjects/media/videos/differenceQuotient/480p15/partial_movie_files/DiffQuotIntro/2201830969_329969645_3883198614.mp4'
+file 'file:/Users/bryanbain/Desktop/Desktop/Manim_Projects/ManimProjects/media/videos/differenceQuotient/480p15/partial_movie_files/DiffQuotIntro/2201830969_1003178272_2341109864.mp4'
+file 'file:/Users/bryanbain/Desktop/Desktop/Manim_Projects/ManimProjects/media/videos/differenceQuotient/480p15/partial_movie_files/DiffQuotIntro/2201830969_329969645_2351345002.mp4'
