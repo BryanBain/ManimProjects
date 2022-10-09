@@ -18,4 +18,4 @@ file 'file:/Users/bryanbain/Desktop/Desktop/Manim_Projects/ManimProjects/media/v
 file 'file:/Users/bryanbain/Desktop/Desktop/Manim_Projects/ManimProjects/media/videos/differenceQuotient/480p15/partial_movie_files/DifferenceQuotient/2201830969_4065229528_3300799603.mp4'
 file 'file:/Users/bryanbain/Desktop/Desktop/Manim_Projects/ManimProjects/media/videos/differenceQuotient/480p15/partial_movie_files/DifferenceQuotient/2201830969_329969645_1553458368.mp4'
 file 'file:/Users/bryanbain/Desktop/Desktop/Manim_Projects/ManimProjects/media/videos/differenceQuotient/480p15/partial_movie_files/DifferenceQuotient/2201830969_3161976576_3273450067.mp4'
-file 'file:/Users/bryanbain/Desktop/Desktop/Manim_Projects/ManimProjects/media/videos/differenceQuotient/480p15/partial_movie_files/DifferenceQuotient/2201830969_329969645_3616666752.mp4'
+file 'file:/Users/bryanbain/Desktop/Desktop/Manim_Projects/ManimProjects/media/videos/differenceQuotient/480p15/partial_movie_files/DifferenceQuotient/2201830969_125286499_3616666752.mp4'

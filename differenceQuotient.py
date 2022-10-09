@@ -55,7 +55,7 @@ class DifferenceQuotient(Scene):
         self.wait()
         diffQuot2 = Tex(r"$m = \frac{f(x+h)-f(x)}{h}$").to_edge(DR, buff=1.5).scale(1.75)
         self.play(ReplacementTransform(diffQuot1, diffQuot2))
-        self.wait()
+        self.wait(2)
 
 
         
